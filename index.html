@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">MyQuiz</div>
+    <ul>
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Support Me</li>
+    </ul>
+</nav>
+
+<!-- HOME PAGE -->
+<section id="home">
+    <h1>Welcome to Quiz App</h1>
+    <span id="quizTopic">Topic: General Knowledge</span>
+    <br>
+    <button onclick="startQuiz()">Start Quiz</button>
+</section>
+
+<!-- QUIZ PAGE -->
+<section id="quizPage" class="hidden">
+
+    <div class="quiz-header">
+        <h2 id="questionNumber"></h2>
+        <div id="timer">05:00</div>
+    </div>
+
+    <div id="questionContainer"></div>
+
+    <div class="buttons">
+        <button onclick="prevQuestion()">Previous</button>
+        <button onclick="markRevisit()">Mark as Revisit</button>
+        <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <button class="submit-btn" onclick="showPreview()">Preview</button>
+</section>
+
+<!-- PREVIEW PAGE -->
+<section id="previewPage" class="hidden">
+    <h2>Question Overview</h2>
+    <div id="overview"></div>
+    <button onclick="submitQuiz()">Final Submit</button>
+</section>
+
+<!-- RESULT PAGE -->
+<section id="resultPage" class="hidden">
+    <h2>Quiz Result</h2>
+    <canvas id="resultChart"></canvas>
+    <button onclick="showAnswerKey()">Answer Key</button>
+</section>
+
+<!-- ANSWER KEY -->
+<section id="answerKeyPage" class="hidden">
+    <h2>Answer Key</h2>
+    <div id="answerKey"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

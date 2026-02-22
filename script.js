@@ -1,0 +1,137 @@
+let questions = [
+    { question: "Capital of India?", options: ["Mumbai","Delhi","Kolkata","Chennai"], answer: 1 },
+    { question: "2 + 2 = ?", options: ["3","4","5","6"], answer: 1 },
+    { question: "Largest planet?", options: ["Earth","Mars","Jupiter","Saturn"], answer: 2 },
+    { question: "HTML stands for?", options: ["Hyper Text Markup Language","HighText","Home Tool","None"], answer: 0 },
+    { question: "CSS is used for?", options: ["Styling","Database","Logic","None"], answer: 0 },
+    { question: "JS is?", options: ["Programming Language","Database","Server","None"], answer: 0 },
+    { question: "Sun rises from?", options: ["West","North","East","South"], answer: 2 },
+    { question: "5 x 5?", options: ["10","20","25","30"], answer: 2 },
+    { question: "Water formula?", options: ["CO2","H2O","O2","H2"], answer: 1 },
+    { question: "Fastest animal?", options: ["Tiger","Cheetah","Lion","Dog"], answer: 1 }
+];
+
+let currentQuestion = 0;
+let userAnswers = Array(10).fill(null);
+let marked = Array(10).fill(false);
+let timeLeft = 300;
+let timerInterval;
+
+function startQuiz() {
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("quizPage").classList.remove("hidden");
+    loadQuestion();
+    startTimer();
+}
+
+function loadQuestion() {
+    let q = questions[currentQuestion];
+    document.getElementById("questionNumber").innerText = `Question ${currentQuestion+1}`;
+    let container = document.getElementById("questionContainer");
+    container.innerHTML = `<h3>${q.question}</h3>`;
+    q.options.forEach((opt, index) => {
+        let div = document.createElement("div");
+        div.classList.add("option");
+        if(userAnswers[currentQuestion] === index) div.classList.add("selected");
+        div.innerText = opt;
+        div.onclick = () => selectOption(index);
+        container.appendChild(div);
+    });
+}
+
+function selectOption(index){
+    userAnswers[currentQuestion] = index;
+    loadQuestion();
+}
+
+function nextQuestion(){
+    if(currentQuestion < questions.length-1){
+        currentQuestion++;
+        loadQuestion();
+    }
+}
+
+function prevQuestion(){
+    if(currentQuestion > 0){
+        currentQuestion--;
+        loadQuestion();
+    }
+}
+
+function markRevisit(){
+    marked[currentQuestion] = true;
+    alert("Marked for revisit!");
+}
+
+function showPreview(){
+    document.getElementById("quizPage").classList.add("hidden");
+    document.getElementById("previewPage").classList.remove("hidden");
+
+    let overview = document.getElementById("overview");
+    overview.innerHTML = "";
+
+    userAnswers.forEach((ans, i)=>{
+        let div = document.createElement("div");
+        if(ans !== null) div.className="green";
+        else if(marked[i]) div.className="blue";
+        else div.className="red";
+        div.innerText = `Q${i+1}`;
+        overview.appendChild(div);
+    });
+}
+
+function startTimer(){
+    timerInterval = setInterval(()=>{
+        timeLeft--;
+        let minutes = Math.floor(timeLeft/60);
+        let seconds = timeLeft%60;
+        document.getElementById("timer").innerText =
+            `${minutes}:${seconds<10?'0':''}${seconds}`;
+
+        if(timeLeft<=0){
+            clearInterval(timerInterval);
+            submitQuiz();
+        }
+    },1000);
+}
+
+function submitQuiz(){
+    clearInterval(timerInterval);
+    document.getElementById("previewPage").classList.add("hidden");
+    document.getElementById("quizPage").classList.add("hidden");
+    document.getElementById("resultPage").classList.remove("hidden");
+
+    let correct=0, wrong=0, unattempted=0;
+
+    userAnswers.forEach((ans,i)=>{
+        if(ans===null) unattempted++;
+        else if(ans===questions[i].answer) correct++;
+        else wrong++;
+    });
+
+    new Chart(document.getElementById("resultChart"), {
+        type: 'pie',
+        data: {
+            labels: ["Correct","Wrong","Unattempted"],
+            datasets: [{
+                data: [correct, wrong, unattempted],
+                backgroundColor: ["green","red","gray"]
+            }]
+        }
+    });
+}
+
+function showAnswerKey(){
+    document.getElementById("resultPage").classList.add("hidden");
+    document.getElementById("answerKeyPage").classList.remove("hidden");
+
+    let container = document.getElementById("answerKey");
+    container.innerHTML="";
+
+    questions.forEach((q,i)=>{
+        let div = document.createElement("div");
+        div.innerHTML = `<h4>Q${i+1}: ${q.question}</h4>
+                         <p>Correct Answer: ${q.options[q.answer]}</p>`;
+        container.appendChild(div);
+    });
+}
