@@ -26,13 +26,13 @@ function startQuiz() {
 
 function loadQuestion() {
     let q = questions[currentQuestion];
-    document.getElementById("questionNumber").innerText = `Question ${currentQuestion+1}`;
+    document.getElementById("questionNumber").innerText = `Question ${currentQuestion + 1}/${questions.length}`; // Updated to show current question out of total
     let container = document.getElementById("questionContainer");
     container.innerHTML = `<h3>${q.question}</h3>`;
     q.options.forEach((opt, index) => {
         let div = document.createElement("div");
         div.classList.add("option");
-        if(userAnswers[currentQuestion] === index) div.classList.add("selected");
+        if (userAnswers[currentQuestion] === index) div.classList.add("selected");
         div.innerText = opt;
         div.onclick = () => selectOption(index);
         container.appendChild(div);
