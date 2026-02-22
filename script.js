@@ -37,6 +37,7 @@ function loadQuestion() {
         div.onclick = () => selectOption(index);
         container.appendChild(div);
     });
+    updateNavigationButtons(); // Update button states after loading question
 }
 
 function selectOption(index){
@@ -60,7 +61,6 @@ function prevQuestion(){
 
 function markRevisit(){
     marked[currentQuestion] = true;
-    alert("Marked for revisit!");
 }
 
 function showPreview(){
@@ -134,4 +134,28 @@ function showAnswerKey(){
                          <p>Correct Answer: ${q.options[q.answer]}</p>`;
         container.appendChild(div);
     });
+}
+
+function updateNavigationButtons() {
+    const prevButton = document.querySelector('.buttons button:nth-child(1)'); // Assuming the first button is "Previous"
+    const nextButton = document.querySelector('.buttons button:nth-child(3)'); // Assuming the third button is "Next"
+
+    // Disable "Previous" button on the first question
+    if (currentQuestion === 0) {
+        prevButton.disabled = true;
+    } else {
+        prevButton.disabled = false;
+    }
+
+    // Disable "Next" button on the last question
+    if (currentQuestion === questions.length - 1) {
+        nextButton.disabled = true;
+    } else {
+        nextButton.disabled = false;
+    }
+}
+
+function backToQuestions() {
+    document.getElementById("previewPage").classList.add("hidden");
+    document.getElementById("quizPage").classList.remove("hidden");
 }

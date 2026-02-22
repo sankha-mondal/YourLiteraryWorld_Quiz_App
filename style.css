@@ -1,5 +1,5 @@
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -8,7 +8,7 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    background: #222;
+    background: #343a40;
     color: white;
 }
 
@@ -16,10 +16,13 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
     cursor: pointer;
+    color: white;
 }
 
 section {
@@ -27,29 +30,19 @@ section {
     text-align: center;
 }
 
-.hidden {
-    display: none;
-}
-
 button {
     padding: 10px 20px;
     margin: 10px;
     cursor: pointer;
-    width: 100%;
-    max-width: 300px;
+    border: none;
+    border-radius: 20%;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
 }
 
-.quiz-header {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-}
-
-#timer {
-    font-size: 20px;
-    color: red;
-    margin-top: 10px;
+button:hover {
+    background-color: #0056b3;
 }
 
 .option {
@@ -57,18 +50,68 @@ button {
     padding: 10px;
     margin: 8px;
     border: 1px solid #ccc;
+    border-radius: 5px;
     cursor: pointer;
-    width: 100%;
-    text-align: center;
+    text-align: left;
+}
+
+.option:hover {
+    background-color: #f8f9fa;
 }
 
 .option.selected {
     background: #d3f8d3;
+    border-color: #28a745;
 }
 
-.green { background: green; color: white; padding: 8px; margin: 5px;}
-.red { background: red; color: white; padding: 8px; margin: 5px;}
-.blue { background: skyblue; color: white; padding: 8px; margin: 5px;}
+.hidden {
+    display: none;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#timer {
+    font-size: 20px;
+    color: red;
+    font-weight: bold; /* Make the timer text bold */
+    border: 2px solid red; /* Add a red border */
+    border-radius: 10px; /* Make the border edges rounded */
+    padding: 5px 10px; /* Add padding for better appearance */
+    display: inline-block; /* Ensure the border wraps tightly around the text */
+}
+
+#questionContainer {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+#questionContainer h3 {
+    font-size: 18px; /* Reduced font size for Question 5 */
+}
+
+.green { background: green; color: white; padding: 8px; margin: 5px; border-radius: 5px;}
+.red { background: red; color: white; padding: 8px; margin: 5px; border-radius: 5px;}
+.blue { background: skyblue; color: white; padding: 8px; margin: 5px; border-radius: 5px;}
+
+.buttons button {
+    border-radius: 5px; /* Reduced the border-radius for a subtle rounding effect */
+}
+
+.submit-btn {
+    border-radius: 5px; /* Match the style of the "Back to Questions" button */
+    background-color: #6c757d; /* Match the grey color */
+    color: white;
+}
+
+.submit-btn, #answerKeyPage button, #home button {
+    border-radius: 5px; /* Match the rounded edges of the Next button */
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -104,4 +147,96 @@ button {
         width: 100%;
         text-align: center;
     }
+}
+
+.legend {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    font-size: 16px;
+}
+
+.legend span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.legend .green {
+    background-color: green;
+}
+
+.legend .red {
+    background-color: red;
+}
+
+.legend .grey {
+    background-color: grey;
+}
+
+#resultChart {
+    max-width: 400px; /* Set a smaller size for the chart */
+    margin: 0 auto; /* Center the chart */
+}
+
+#resultPage {
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background for better readability */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#resultPage h2 {
+    margin-bottom: 20px;
+}
+
+#quizTopic {
+    background-color: yellow; /* Set yellow background color for the quiz topic */
+    padding: 5px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+#answerKeyPage {
+    padding: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f8f9fa; /* Light background for better readability */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#answerKeyPage h2 {
+    text-align: center; /* Ensure the "Answer Key" heading is centered */
+    font-weight: bold;
+    margin-bottom: 20px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#answerKeyPage div {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#answerKeyPage div:last-child {
+    border-bottom: none;
+}
+
+#answerKeyPage .correct-answer {
+    font-weight: bold;
+    color: #28a745; /* Bootstrap success color */
 }
