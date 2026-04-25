@@ -15,10 +15,19 @@ header {
 
 .logo {
     font-weight: bold;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#logo {
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 50%;
+    border: 2px solid white;
 }
 
 .menu {
-    font-size: 20px;
+    font-size: 28px;
 }
 
 /* HOME PAGE */
@@ -79,6 +88,11 @@ header {
 /* QUIZ */
 section {
     padding: 15px;
+}
+
+header {
+    background: linear-gradient(45deg, #ff5a00, #ff8c00);
+    color: white;
 }
 
 .option {
