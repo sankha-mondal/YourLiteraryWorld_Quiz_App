@@ -1,14 +1,54 @@
 let questions = [
-    { question: "Capital of India?", options: ["Mumbai","Delhi","Kolkata","Chennai"], answer: 1 },
-    { question: "2 + 2 = ?", options: ["3","4","5","6"], answer: 1 },
-    { question: "Largest planet?", options: ["Earth","Mars","Jupiter","Saturn"], answer: 2 },
-    { question: "HTML stands for?", options: ["Hyper Text Markup Language","HighText","Home Tool","None"], answer: 0 },
-    { question: "CSS is used for?", options: ["Styling","Database","Logic","None"], answer: 0 },
-    { question: "JS is?", options: ["Programming Language","Database","Server","None"], answer: 0 },
-    { question: "Sun rises from?", options: ["West","North","East","South"], answer: 2 },
-    { question: "5 x 5?", options: ["10","20","25","30"], answer: 2 },
-    { question: "Water formula?", options: ["CO2","H2O","O2","H2"], answer: 1 },
-    { question: "Fastest animal?", options: ["Tiger","Cheetah","Lion","Dog"], answer: 1 }
+    {
+        question: "Capital of India?",
+        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        answer: 1
+    },
+    { 
+        question: "2 + 2 = ?", 
+        options: ["3", "4", "5", "6"], 
+        answer: 1 
+    },
+    { 
+        question: "Largest planet?", 
+        options: ["Earth", "Mars", "Jupiter", "Saturn"], 
+        answer: 2
+    },
+    { 
+        question: "HTML stands for?", 
+        options: ["Hyper Text Markup Language", "HighText", "Home Tool", "None"], 
+        answer: 0 
+    },
+    { 
+        question: "CSS is used for?", 
+        options: ["Styling", "Database", "Logic", "None"], 
+        answer: 0 
+    },
+    { 
+        question: "JS is?", 
+        options: ["Programming Language", "Database", "Server", "None"], 
+        answer: 0 
+    },
+    { 
+        question: "Sun rises from?", 
+        options: ["West", "North", "East", "South"], 
+        answer: 2 
+    },
+    { 
+        question: "5 x 5?", 
+        options: ["10", "20", "25", "30"], 
+        answer: 2 
+    },
+    { 
+        question: "Water formula?", 
+        options: ["CO2", "H2O", "O2", "H2"], 
+        answer: 1 
+    },
+    { 
+        question: "Fastest animal?", 
+        options: ["Tiger", "Cheetah", "Lion", "Dog"], 
+        answer: 1 
+    }
 ];
 
 let currentQuestion = 0;
@@ -40,97 +80,97 @@ function loadQuestion() {
     updateNavigationButtons(); // Update button states after loading question
 }
 
-function selectOption(index){
+function selectOption(index) {
     userAnswers[currentQuestion] = index;
     loadQuestion();
 }
 
-function nextQuestion(){
-    if(currentQuestion < questions.length-1){
+function nextQuestion() {
+    if (currentQuestion < questions.length - 1) {
         currentQuestion++;
         loadQuestion();
     }
 }
 
-function prevQuestion(){
-    if(currentQuestion > 0){
+function prevQuestion() {
+    if (currentQuestion > 0) {
         currentQuestion--;
         loadQuestion();
     }
 }
 
-function markRevisit(){
+function markRevisit() {
     marked[currentQuestion] = true;
 }
 
-function showPreview(){
+function showPreview() {
     document.getElementById("quizPage").classList.add("hidden");
     document.getElementById("previewPage").classList.remove("hidden");
 
     let overview = document.getElementById("overview");
     overview.innerHTML = "";
 
-    userAnswers.forEach((ans, i)=>{
+    userAnswers.forEach((ans, i) => {
         let div = document.createElement("div");
-        if(ans !== null) div.className="green";
-        else if(marked[i]) div.className="blue";
-        else div.className="red";
-        div.innerText = `Q${i+1}`;
+        if (ans !== null) div.className = "green";
+        else if (marked[i]) div.className = "blue";
+        else div.className = "red";
+        div.innerText = `Q${i + 1}`;
         overview.appendChild(div);
     });
 }
 
-function startTimer(){
-    timerInterval = setInterval(()=>{
+function startTimer() {
+    timerInterval = setInterval(() => {
         timeLeft--;
-        let minutes = Math.floor(timeLeft/60);
-        let seconds = timeLeft%60;
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
         document.getElementById("timer").innerText =
-            `${minutes}:${seconds<10?'0':''}${seconds}`;
+            `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 
-        if(timeLeft<=0){
+        if (timeLeft <= 0) {
             clearInterval(timerInterval);
             submitQuiz();
         }
-    },1000);
+    }, 1000);
 }
 
-function submitQuiz(){
+function submitQuiz() {
     clearInterval(timerInterval);
     document.getElementById("previewPage").classList.add("hidden");
     document.getElementById("quizPage").classList.add("hidden");
     document.getElementById("resultPage").classList.remove("hidden");
 
-    let correct=0, wrong=0, unattempted=0;
+    let correct = 0, wrong = 0, unattempted = 0;
 
-    userAnswers.forEach((ans,i)=>{
-        if(ans===null) unattempted++;
-        else if(ans===questions[i].answer) correct++;
+    userAnswers.forEach((ans, i) => {
+        if (ans === null) unattempted++;
+        else if (ans === questions[i].answer) correct++;
         else wrong++;
     });
 
     new Chart(document.getElementById("resultChart"), {
         type: 'pie',
         data: {
-            labels: ["Correct","Wrong","Unattempted"],
+            labels: ["Correct", "Wrong", "Unattempted"],
             datasets: [{
                 data: [correct, wrong, unattempted],
-                backgroundColor: ["green","red","gray"]
+                backgroundColor: ["green", "red", "gray"]
             }]
         }
     });
 }
 
-function showAnswerKey(){
+function showAnswerKey() {
     document.getElementById("resultPage").classList.add("hidden");
     document.getElementById("answerKeyPage").classList.remove("hidden");
 
     let container = document.getElementById("answerKey");
-    container.innerHTML="";
+    container.innerHTML = "";
 
-    questions.forEach((q,i)=>{
+    questions.forEach((q, i) => {
         let div = document.createElement("div");
-        div.innerHTML = `<h4>Q${i+1}: ${q.question}</h4>
+        div.innerHTML = `<h4>Q${i + 1}: ${q.question}</h4>
                          <p>Correct Answer: ${q.options[q.answer]}</p>`;
         container.appendChild(div);
     });
