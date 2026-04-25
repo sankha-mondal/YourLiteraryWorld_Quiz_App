@@ -4,33 +4,31 @@
     <title>Quiz App</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <div class="logo">
-        <img src="logo.jpeg" alt="Logo" style="width: 40px; height: auto; border: 2px solid white; border-radius: 50%;">
-        &nbsp;<b style="font-size: larger;">YourLiteraryWorld</b>
+        <img src="logo.jpeg" style="width:40px;border-radius:50%">
+        <b>YourLiteraryWorld</b>
     </div>
+
     <ul>
-        <li><b style="font-size: larger;">Home</b></li>
-        <li><b style="font-size: larger;">About Us</b></li>
-        <li><b style="font-size: larger;">Support Me</b></li>
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Support Me</li>
     </ul>
 </nav>
 
-<!-- HOME PAGE -->
 <section id="home">
     <h1>Welcome to Quiz App</h1>
     <h4 id="quizTopic">Topic: General Knowledge</h4>
-    <br>
     <button onclick="startQuiz()">Start Quiz</button>
 </section>
 
-<!-- QUIZ PAGE -->
 <section id="quizPage" class="hidden">
 
     <div class="quiz-header">
@@ -42,53 +40,46 @@
 
     <div class="buttons">
         <button onclick="prevQuestion()">Previous</button>
-        <button onclick="markRevisit()">Mark as Revisit</button>
+        <button id="markBtn" onclick="markRevisit()">Mark Revisit</button>
         <button onclick="nextQuestion()">Save & Next</button>
     </div>
 
-    <br>
-    <button class="submit-btn" onclick="showPreview()">Preview & Submit</button>
+    <button class="submit-btn" onclick="showPreview()">Preview</button>
 </section>
 
-<!-- PREVIEW PAGE -->
 <section id="previewPage" class="hidden">
-    <h2 class="text-center text-primary">Question Overview</h2>
-    <div id="overview" class="d-flex flex-wrap justify-content-center gap-3 p-3 bg-light border border-secondary rounded">
-        <!-- Question overview items will be dynamically added here -->
-    </div>
 
-    <!-- Legend for question status -->
-    <div class="legend d-flex justify-content-center align-items-center gap-3 mt-3">
+    <h2>Question Overview</h2>
+
+    <div id="overview"></div>
+
+    <div class="legend">
         <span class="green rounded-circle d-inline-block" style="width: 20px; height: 20px;"></span> Attempted
+        <span class="blue rounded-circle d-inline-block" style="width: 20px; height: 20px;"></span> Revisit
         <span class="grey rounded-circle d-inline-block" style="width: 20px; height: 20px;"></span> Unattempted
     </div>
 
-    <div class="d-flex justify-content-center mt-3">
-        <button class="btn btn-secondary me-2" onclick="backToQuestions()">Back to Questions</button>
-        <button class="btn btn-primary" onclick="submitQuiz()">Final Submit</button>
-    </div>
+    <h4 id="revisitCount"></h4>
+
+    <button onclick="backToQuestions()">Back</button>
+    <button onclick="submitQuiz()">Submit</button>
 </section>
 
-<!-- RESULT PAGE -->
 <section id="resultPage" class="hidden">
-    <h2 class="text-center text-primary">Quiz Result</h2>
-    <div class="d-flex justify-content-center">
-        <canvas id="resultChart" class="border border-primary rounded p-3 bg-light"></canvas>
-    </div>
-    <hr>
-    <div class="d-flex justify-content-center mt-3">
-        <button class="btn btn-success me-2" onclick="showAnswerKey()">Answer Key</button>
-    </div>
+    <h2>Result</h2>
+
+    <canvas id="resultChart"></canvas>
+
+    <div id="scoreText"></div>
+
+    <button onclick="showAnswerKey()">Answer Key</button>
 </section>
 
-<!-- ANSWER KEY -->
 <section id="answerKeyPage" class="hidden">
-    <h4 style="text-align: center; background-color: yellow;">Answer Key</h4>
+    <h3>Answer Key</h3>
     <div id="answerKey"></div>
 </section>
 
 <script src="script.js"></script>
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
