@@ -37,6 +37,24 @@ function startExam() {
     start(); // existing function
 }
 
+/* TOGGLE MENU */
+function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("hidden");
+}
+
+/* NAV ACTIONS */
+function goHome() {
+    location.reload();
+}
+
+function showAbout() {
+    alert("About Us:\nThis is a mock test platform to practice exams.");
+}
+
+function showSupport() {
+    alert("Support Me:\nYou can support via sharing or donations ❤️");
+}
+
 /* LOAD QUESTION */
 function load() {
     let q = questions[current];

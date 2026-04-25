@@ -11,12 +11,20 @@
 
     <!-- HEADER -->
     <header>
-        <div class="logo">
-            <img src="logo.jpeg" width="35" height="35" alt="Logo" id="logo">
-            YourLiteraryWorld
-        </div>
-        <div class="menu">☰</div>
-    </header>
+    <div class="logo">
+        <img src="logo.jpeg" width="35" height="35" alt="Logo" id="logo">
+        YourLiteraryWorld
+    </div>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- DROPDOWN MENU -->
+<div id="navMenu" class="nav-menu hidden">
+    <div onclick="goHome()">🏠 Home</div>
+    <div onclick="showAbout()">ℹ️ About Us</div>
+    <div onclick="showSupport()">💖 Support Me</div>
+</div>
 
     <!-- HOME PAGE -->
     <section id="homePage">

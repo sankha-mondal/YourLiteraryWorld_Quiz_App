@@ -27,7 +27,33 @@ header {
 }
 
 .menu {
-    font-size: 28px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* DROPDOWN MENU */
+.nav-menu {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 180px;
+
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    overflow: hidden;
+    z-index: 2000;
+}
+
+/* MENU ITEMS */
+.nav-menu div {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+}
+
+.nav-menu div:hover {
+    background: #f5f5f5;
 }
 
 /* HOME PAGE */
