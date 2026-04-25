@@ -1,94 +1,185 @@
+/* RESET */
 body {
-    font-family: Arial;
     margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    font-size: 16px;
 }
 
-/* NAV */
+/* NAVBAR (MOBILE FRIENDLY) */
 nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+
+    padding: 10px 15px;
     background: #343a40;
     color: white;
-    padding: 10px;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+}
+
+nav img {
+    width: 35px;
+    border-radius: 50%;
 }
 
 nav ul {
     display: flex;
-    flex-direction: column;
+    gap: 12px;
     list-style: none;
     padding: 0;
+    margin: 0;
+    font-size: 14px;
 }
 
-/* BUTTONS */
+nav ul li {
+    cursor: pointer;
+}
+
+/* SECTION (FULL WIDTH FOR MOBILE) */
+section {
+    padding: 15px;
+    width: 100%;
+}
+
+/* BUTTONS (BIG TOUCH AREA) */
 button:not(.btn) {
-    padding: 10px;
-    margin: 5px;
-    background: #007bff;
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
 }
 
-button:not(.btn):hover {
-    background: #0056b3;
+button:active {
+    transform: scale(0.98);
 }
 
-/* ACTIVE REVISIT */
-.active-revisit {
-    background: skyblue !important;
-    color: black;
+/* HEADER (QUESTION + TIMER) */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* TIMER */
+#timer {
+    font-size: 18px;
+    color: red;
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 8px;
+    padding: 3px 8px;
+    background: white;
+}
+
+/* QUESTION */
+#questionContainer {
+    text-align: left;
+}
+
+#questionContainer h3 {
+    font-size: 17px;
 }
 
 /* OPTIONS */
 .option {
-    padding: 10px;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
     border: 1px solid #ccc;
-    margin: 5px;
-    cursor: pointer;
-}
-
-.selected {
-    background: lightgreen;
-}
-
-/* STATUS BOX */
-.status-box {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-    color: white;
-}
-
-.green { background: green; }
-.grey { background: grey; }
-.blue { background: skyblue; color: black; }
-
-/* QUIZ HEADER FIX */
-.quiz-header {
-    display: flex;
-    justify-content: space-between; /* left + right */
-    align-items: center;
-    width: 100%;
-    max-width: 1000px;
-    margin: 10px auto; /* center horizontally */
-}
-
-/* TIMER (RIGHT SIDE, BELOW NAV) */
-#timer {
-    font-size: 22px;
-    color: red;
-    font-weight: bold;
-    border: 2px solid red;
-    border-radius: 10px;
-    padding: 5px 10px;
     background: white;
+    font-size: 15px;
+}
+
+.option.selected {
+    background: #d3f8d3;
+    border-color: #28a745;
+}
+
+/* BUTTON GROUP */
+.buttons button {
+    width: 100%;
+}
+
+/* MARK BUTTON ACTIVE */
+.active-revisit {
+    background-color: skyblue !important;
+    color: black !important;
+}
+
+/* SUBMIT */
+.submit-btn {
+    background-color: #6c757d;
 }
 
 /* HIDDEN */
 .hidden {
     display: none;
+}
+
+/* PREVIEW GRID */
+#overview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* STATUS BOX */
+.status-box {
+    width: 42px;
+    height: 42px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    font-weight: bold;
+    color: white;
+}
+
+/* COLORS */
+.green { background: green; }
+.grey { background: grey; }
+.blue { background: skyblue; color: black; }
+
+/* LEGEND */
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+/* RESULT */
+#resultChart {
+    max-width: 280px;
+    margin: 20px auto;
+}
+
+/* ANSWER KEY */
+#answerKeyPage {
+    padding: 10px;
+}
+
+#answerKey div {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
 }

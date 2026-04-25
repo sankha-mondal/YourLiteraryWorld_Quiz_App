@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Quiz App</title>
     <link rel="stylesheet" href="style.css">
@@ -10,76 +11,77 @@
 
 <body>
 
-<nav>
-    <div class="logo">
-        <img src="logo.jpeg" style="width:40px;border-radius:50%">
-        <b>YourLiteraryWorld</b>
-    </div>
+    <nav>
+        <div class="logo">
+            <img src="logo.jpeg" style="width:40px;border-radius:50%">
+            <b>YourLiteraryWorld</b>
+        </div>
 
-    <ul>
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Support Me</li>
-    </ul>
-</nav>
+        <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Support Me</li>
+        </ul>
+    </nav>
 
-<section id="home">
-    <h1>Welcome to Quiz App</h1>
-    <h4 id="quizTopic">Topic: General Knowledge</h4>
-    <button onclick="startQuiz()">Start Quiz</button>
-</section>
+    <section id="home">
+        <h1>Welcome to Quiz App</h1>
+        <h4 id="quizTopic">Topic: General Knowledge</h4>
+        <button onclick="startQuiz()">Start Quiz</button>
+    </section>
 
-<section id="quizPage" class="hidden">
+    <section id="quizPage" class="hidden">
 
-    <div class="quiz-header">
-        <h2 id="questionNumber"></h2>
-        <div id="timer">06:00</div>
-    </div>
+        <div class="quiz-header">
+            <h2 id="questionNumber"></h2>
+            <div id="timer">06:00</div>
+        </div>
 
-    <div id="questionContainer"></div>
+        <div id="questionContainer"></div>
 
-    <div class="buttons">
-        <button onclick="prevQuestion()">Previous</button>
-        <button id="markBtn" onclick="markRevisit()">Mark Revisit</button>
-        <button onclick="nextQuestion()">Save & Next</button>
-    </div>
+        <div class="buttons">
+            <button onclick="prevQuestion()">Previous</button>
+            <button id="markBtn" onclick="markRevisit()">Mark Revisit</button>
+            <button onclick="nextQuestion()">Save & Next</button>
+        </div>
 
-    <button class="submit-btn" onclick="showPreview()">Preview</button>
-</section>
+        <button class="submit-btn" onclick="showPreview()">Preview</button>
+    </section>
 
-<section id="previewPage" class="hidden">
+    <section id="previewPage" class="hidden">
 
-    <h2>Question Overview</h2>
+        <h2>Question Overview</h2>
 
-    <div id="overview"></div>
+        <div id="overview"></div>
 
-    <div class="legend">
-        <span class="green rounded-circle d-inline-block" style="width: 20px; height: 20px;"></span> Attempted
-        <span class="blue rounded-circle d-inline-block" style="width: 20px; height: 20px;"></span> Revisit
-        <span class="grey rounded-circle d-inline-block" style="width: 20px; height: 20px;"></span> Unattempted
-    </div>
+        <div class="legend">
+            <span class="green rounded-circle d-inline-block" style="width: 20px; height: 20px;"></span> Attempted
+            <span class="blue rounded-circle d-inline-block" style="width: 20px; height: 20px;"></span> Revisit
+            <span class="grey rounded-circle d-inline-block" style="width: 20px; height: 20px;"></span> Unattempted
+        </div>
 
-    <h4 id="revisitCount"></h4>
+        <h4 id="revisitCount"></h4>
 
-    <button onclick="backToQuestions()">Back</button>
-    <button onclick="submitQuiz()">Submit</button>
-</section>
+        <button onclick="backToQuestions()">Back</button>
+        <button onclick="submitQuiz()">Submit</button>
+    </section>
 
-<section id="resultPage" class="hidden">
-    <h2>Result</h2>
+    <section id="resultPage" class="hidden">
+        <h2>Result</h2>
 
-    <canvas id="resultChart"></canvas>
+        <canvas id="resultChart"></canvas>
 
-    <div id="scoreText"></div>
+        <div id="scoreText"></div>
 
-    <button onclick="showAnswerKey()">Answer Key</button>
-</section>
+        <button onclick="showAnswerKey()">Answer Key</button>
+    </section>
 
-<section id="answerKeyPage" class="hidden">
-    <h3>Answer Key</h3>
-    <div id="answerKey"></div>
-</section>
+    <section id="answerKeyPage" class="hidden">
+        <h3>Answer Key</h3>
+        <div id="answerKey"></div>
+    </section>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
