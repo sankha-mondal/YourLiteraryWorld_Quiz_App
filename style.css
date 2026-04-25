@@ -1,185 +1,123 @@
-/* RESET */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f0f2f5;
-    font-size: 16px;
+    font-family: Arial;
+    background: #f5f6fa;
+    font-size: 18px;
 }
 
-/* NAVBAR (MOBILE FRIENDLY) */
-nav {
+/* HEADER */
+header {
     position: sticky;
     top: 0;
-    z-index: 1000;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 10px 15px;
     background: #343a40;
     color: white;
-}
-
-nav .logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 16px;
-}
-
-nav img {
-    width: 35px;
-    border-radius: 50%;
-}
-
-nav ul {
-    display: flex;
-    gap: 12px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
-}
-
-nav ul li {
-    cursor: pointer;
-}
-
-/* SECTION (FULL WIDTH FOR MOBILE) */
-section {
-    padding: 15px;
-    width: 100%;
-}
-
-/* BUTTONS (BIG TOUCH AREA) */
-button:not(.btn) {
-    width: 100%;
-    padding: 14px;
-    margin: 8px 0;
-    font-size: 16px;
-    border-radius: 8px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-}
-
-button:active {
-    transform: scale(0.98);
-}
-
-/* HEADER (QUESTION + TIMER) */
-.quiz-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    padding: 12px 15px;
+    font-size: 18px;
+    z-index: 1000;
 }
 
-/* TIMER */
+/* TIMER BAR BELOW HEADER */
+#timerBar {
+    position: sticky;
+    top: 50px; /* same as header height */
+    background: #fff;
+    padding: 8px 0;
+    text-align: center;
+    z-index: 999;
+    border-bottom: 1px solid #ddd;
+}
+
+/* TIMER STYLE */
 #timer {
+    display: inline-block;
     font-size: 18px;
-    color: red;
     font-weight: bold;
-    border: 2px solid red;
-    border-radius: 8px;
-    padding: 3px 8px;
-    background: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #f8f9fa;
+    border: 2px solid #333;
+}
+
+/* PAGE */
+section {
+    padding: 15px;
+    max-width: 500px;
+    margin: auto;
 }
 
 /* QUESTION */
-#questionContainer {
-    text-align: left;
+#questionNumber {
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-#questionContainer h3 {
-    font-size: 17px;
-}
-
-/* OPTIONS */
 .option {
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 8px;
-    border: 1px solid #ccc;
     background: white;
-    font-size: 15px;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
 }
 
 .option.selected {
-    background: #d3f8d3;
-    border-color: #28a745;
+    background: #d4edda;
+    border-color: green;
 }
 
-/* BUTTON GROUP */
-.buttons button {
-    width: 100%;
+/* PALETTE */
+#palette {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-top: 20px;
 }
 
-/* MARK BUTTON ACTIVE */
-.active-revisit {
-    background-color: skyblue !important;
-    color: black !important;
-}
-
-/* SUBMIT */
-.submit-btn {
-    background-color: #6c757d;
-}
-
-/* HIDDEN */
-.hidden {
-    display: none;
-}
-
-/* PREVIEW GRID */
-#overview {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-/* STATUS BOX */
-.status-box {
-    width: 42px;
-    height: 42px;
-    margin: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
-    font-weight: bold;
+.box {
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
     color: white;
 }
 
-/* COLORS */
 .green { background: green; }
 .grey { background: grey; }
 .blue { background: skyblue; color: black; }
+.current { border: 2px solid black; }
 
-/* LEGEND */
-.legend {
+/* BOTTOM NAV */
+.bottom-nav {
+    position: sticky;
+    bottom: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    font-size: 14px;
-    margin: 15px 0;
+    background: white;
+}
+
+.bottom-nav button {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
 }
 
 /* RESULT */
-#resultChart {
-    max-width: 280px;
-    margin: 20px auto;
+canvas {
+    max-width: 300px;
+    margin: auto;
 }
 
 /* ANSWER KEY */
-#answerKeyPage {
-    padding: 10px;
+.answer-card {
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-#answerKey div {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 8px;
-}
+.correct { color: green; }
+.wrong { color: red; }
+.unattempted { color: grey; }
+
+/* HIDDEN */
+.hidden { display: none; }

@@ -7,168 +7,140 @@ let questions = [
     { question: "Largest planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], answer: 2 },
     { question: "Capital of India?", options: ["Mumbai", "Delhi", "Kolkata", "Chennai"], answer: 1 },
     { question: "2 + 2 = ?", options: ["3", "4", "5", "6"], answer: 1 },
-    { question: "Largest planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], answer: 2 }
+    { question: "Largest planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], answer: 2 },
+    { question: "Capital of India?", options: ["Mumbai", "Delhi", "Kolkata", "Chennai"], answer: 1 },
 ];
 
-let currentQuestion = 0;
-let userAnswers = Array(questions.length).fill(null);
+let current = 0;
+let answers = Array(questions.length).fill(null);
 let marked = Array(questions.length).fill(false);
-let timeLeft = 360;
-let timerInterval;
-let chart;
+
+let time = 360;
+let timer;
 
 /* START */
-function startQuiz() {
-    timeLeft = 360;
-    document.getElementById("timer").innerText = "6:00";
+start();
 
-    document.getElementById("home").classList.add("hidden");
-    document.getElementById("quizPage").classList.remove("hidden");
-
-    loadQuestion();
+function start() {
+    load();
+    buildPalette();
     startTimer();
 }
 
-/* LOAD */
-function loadQuestion() {
-    let q = questions[currentQuestion];
+/* LOAD QUESTION */
+function load() {
+    let q = questions[current];
 
     document.getElementById("questionNumber").innerText =
-        `Q ${currentQuestion + 1}/${questions.length}`;
+        `Q ${current + 1}/${questions.length}`;
 
-    let container = document.getElementById("questionContainer");
-    container.innerHTML = `<h3>${q.question}</h3>`;
+    let html = `<h3>${q.question}</h3>`;
 
     q.options.forEach((opt, i) => {
-        let div = document.createElement("div");
-        div.className = "option";
-        if (userAnswers[currentQuestion] === i) div.classList.add("selected");
-
-        div.innerText = opt;
-        div.onclick = () => selectOption(i);
-
-        container.appendChild(div);
+        let selected = answers[current] === i ? "selected" : "";
+        html += `<div class="option ${selected}" onclick="select(${i})">${opt}</div>`;
     });
 
-    updateRevisitButton();
+    document.getElementById("questionContainer").innerHTML = html;
+    updatePalette();
 }
 
 /* SELECT */
-function selectOption(i) {
-    userAnswers[currentQuestion] = i;
-    loadQuestion();
+function select(i) {
+    answers[current] = i;
+    load();
 }
 
 /* NAV */
 function nextQuestion() {
-    if (currentQuestion < questions.length - 1) currentQuestion++;
-    loadQuestion();
+    if (current < questions.length - 1) current++;
+    load();
 }
 
 function prevQuestion() {
-    if (currentQuestion > 0) currentQuestion--;
-    loadQuestion();
+    if (current > 0) current--;
+    load();
 }
 
-/* REVISIT */
+/* MARK */
 function markRevisit() {
-    marked[currentQuestion] = !marked[currentQuestion];
-    updateRevisitButton();
+    marked[current] = !marked[current];
+    updatePalette();
 }
 
-function updateRevisitButton() {
-    let btn = document.getElementById("markBtn");
-    if (marked[currentQuestion]) btn.classList.add("active-revisit");
-    else btn.classList.remove("active-revisit");
-}
+/* PALETTE */
+function buildPalette() {
+    let p = document.getElementById("palette");
+    p.innerHTML = "";
 
-/* PREVIEW */
-function showPreview() {
-    document.getElementById("quizPage").classList.add("hidden");
-    document.getElementById("previewPage").classList.remove("hidden");
-
-    let overview = document.getElementById("overview");
-    overview.innerHTML = "";
-
-    userAnswers.forEach((ans, i) => {
+    questions.forEach((_, i) => {
         let div = document.createElement("div");
-
-        if (marked[i]) div.className = "status-box blue";
-        else if (ans !== null) div.className = "status-box green";
-        else div.className = "status-box grey";
-
         div.innerText = i + 1;
-        div.onclick = () => {
-            currentQuestion = i;
-            backToQuestions();
-        };
-
-        overview.appendChild(div);
+        div.onclick = () => { current = i; load(); };
+        p.appendChild(div);
     });
+}
 
-    document.getElementById("revisitCount").innerText =
-        "Revisit: " + marked.filter(x => x).length;
+function updatePalette() {
+    let boxes = document.querySelectorAll("#palette div");
+
+    boxes.forEach((box, i) => {
+        box.className = "box";
+
+        if (marked[i]) box.classList.add("blue");
+        else if (answers[i] !== null) box.classList.add("green");
+        else box.classList.add("grey");
+
+        if (i === current) box.classList.add("current");
+    });
 }
 
 /* TIMER */
 function startTimer() {
-    clearInterval(timerInterval);
+    timer = setInterval(() => {
+        time--;
 
-    timerInterval = setInterval(() => {
-        if (timeLeft <= 0) {
-            submitQuiz();
-            return;
-        }
-
-        timeLeft--;
-
-        let m = Math.floor(timeLeft / 60);
-        let s = timeLeft % 60;
+        let m = Math.floor(time / 60);
+        let s = time % 60;
 
         document.getElementById("timer").innerText =
-            `${m}:${s < 10 ? '0' : ''}${s}`;
+            `${m}:${s < 10 ? "0" : ""}${s}`;
+
+        if (time < 60)
+            document.getElementById("timer").style.color = "red";
+
+        if (time <= 0) submitQuiz();
     }, 1000);
 }
 
 /* SUBMIT */
 function submitQuiz() {
-    if (!confirm("Submit quiz?")) return;
+    clearInterval(timer);
 
-    clearInterval(timerInterval);
-
-    document.getElementById("previewPage").classList.add("hidden");
     document.getElementById("quizPage").classList.add("hidden");
+    document.querySelector(".bottom-nav").style.display = "none";
     document.getElementById("resultPage").classList.remove("hidden");
 
-    let correct = 0, wrong = 0, unattempted = 0;
+    let correct = 0, wrong = 0, un = 0;
 
-    userAnswers.forEach((ans, i) => {
-        if (ans === null) unattempted++;
-        else if (ans === questions[i].answer) correct++;
+    answers.forEach((a, i) => {
+        if (a === null) un++;
+        else if (a === questions[i].answer) correct++;
         else wrong++;
     });
 
     document.getElementById("scoreText").innerText =
         `Score: ${correct}/${questions.length}`;
 
-    if (chart) chart.destroy();
-
-    chart = new Chart(document.getElementById("resultChart"), {
+    new Chart(document.getElementById("chart"), {
         type: 'pie',
         data: {
             labels: ["Correct", "Wrong", "Unattempted"],
             datasets: [{
-                data: [correct, wrong, unattempted],
-                backgroundColor: ["green", "red", "gray"]
+                data: [correct, wrong, un]
             }]
         }
     });
-}
-
-/* BACK */
-function backToQuestions() {
-    document.getElementById("previewPage").classList.add("hidden");
-    document.getElementById("quizPage").classList.remove("hidden");
 }
 
 /* ANSWER KEY */
@@ -180,6 +152,19 @@ function showAnswerKey() {
     container.innerHTML = "";
 
     questions.forEach((q, i) => {
-        container.innerHTML += `<p>Q${i + 1}: ${q.options[q.answer]}</p>`;
+        let user = answers[i];
+
+        let status = user === null ? "unattempted" :
+                     user === q.answer ? "correct" : "wrong";
+
+        let userText = user === null ? "Not Attempted" : q.options[user];
+
+        container.innerHTML += `
+            <div class="answer-card">
+                <h4>Q${i + 1}: ${q.question}</h4>
+                <p>Your: <span class="${status}">${userText}</span></p>
+                <p>Correct: <span class="correct">${q.options[q.answer]}</span></p>
+            </div>
+        `;
     });
 }
