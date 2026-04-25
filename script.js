@@ -1,14 +1,62 @@
 let questions = [
-    { question: "Capital of India?", options: ["Mumbai", "Delhi", "Kolkata", "Chennai"], answer: 1 },
-    { question: "2 + 2 = ?", options: ["3", "4", "5", "6"], answer: 1 },
-    { question: "Largest planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], answer: 2 },
-    { question: "Capital of India?", options: ["Mumbai", "Delhi", "Kolkata", "Chennai"], answer: 1 },
-    { question: "2 + 2 = ?", options: ["3", "4", "5", "6"], answer: 1 },
-    { question: "Largest planet?", options: ["Earth", "Mars", "Jupiter", "Jupiter"], answer: 2 },
-    { question: "Capital of India?", options: ["Mumbai", "Delhi", "Kolkata", "Chennai"], answer: 1 },
-    { question: "2 + 2 = ?", options: ["3", "4", "5", "6"], answer: 1 },
-    { question: "Largest planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], answer: 2 },
-    { question: "Capital of India?", options: ["Mumbai", "Delhi", "Kolkata", "Chennai"], answer: 1 },
+    {
+        question: "Capital of India?",
+        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        answer: 1, explanation: "Delhi is the capital of India."
+    },
+    {
+        question: "2 + 2 = ?",
+        options: ["3", "4", "5", "6"],
+        answer: 1,
+        explanation: "2 + 2 equals 4."
+    },
+    {
+        question: "Largest planet?",
+        options: ["Earth", "Mars", "Jupiter", "Saturn"],
+        answer: 2, explanation: "Jupiter is the largest planet in our solar system."
+    },
+    {
+        question: "Capital of India?",
+        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        answer: 1,
+        explanation: "Delhi is the capital of India."
+    },
+    {
+        question: "2 + 2 = ?",
+        options: ["3", "4", "5", "6"],
+        answer: 1,
+        explanation: "2 + 2 equals 4."
+    },
+    {
+        question: "Largest planet?",
+        options: ["Earth", "Mars", "Jupiter", "Jupiter"],
+        answer: 2,
+        explanation: "Jupiter is the largest planet in our solar system."
+    },
+    {
+        question: "Capital of India?",
+        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        answer: 1,
+        explanation: "Delhi is the capital of India."
+    },
+    {
+        question: "2 + 2 = ?",
+        options: ["3", "4", "5", "6"],
+        answer: 1,
+        explanation: "2 + 2 equals 4."
+    },
+    {
+        question: "Largest planet?",
+        options: ["Earth", "Mars", "Jupiter", "Saturn"],
+        answer: 2,
+        explanation: "Jupiter is the largest planet in our solar system."
+    },
+    {
+        question: "Capital of India?",
+        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        answer: 1,
+        explanation: "Delhi is the capital of India."
+    },
 ];
 
 let current = 0;
@@ -221,6 +269,7 @@ function showAnswerKey() {
                 <h4>Q${i + 1}: ${q.question}</h4>
                 <p>Your: <span class="${status}">${userText}</span></p>
                 <p>Correct: <span class="correct">${q.options[q.answer]}</span></p>
+                <p>Explanation: ${q.explanation}</p>
             </div>
         `;
     });
