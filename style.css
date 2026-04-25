@@ -2,9 +2,10 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 18px; /* Larger base font size */
+    font-size: 18px;
 }
 
+/* NAVBAR */
 nav {
     display: flex;
     flex-direction: column;
@@ -26,25 +27,28 @@ nav ul li {
     color: white;
 }
 
+/* SECTIONS */
 section {
     padding: 20px;
     text-align: center;
 }
 
+/* BUTTONS */
 button {
-    padding: 14px 28px;
+    padding: 12px 24px;
     margin: 10px;
-    font-size: 20px; /* Larger button text */
-    border-radius: 10px;
+    font-size: 18px;
+    border-radius: 8px;
     background-color: #007bff;
     color: white;
-    font-size: 16px;
+    border: none;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
+/* OPTIONS */
 .option {
     display: block;
     padding: 10px;
@@ -64,187 +68,104 @@ button:hover {
     border-color: #28a745;
 }
 
+/* HIDDEN */
 .hidden {
     display: none;
 }
 
+/* HEADER */
 .quiz-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
 }
 
+/* TIMER */
 #timer {
     font-size: 22px;
     color: red;
-    font-weight: bold; /* Make the timer text bold */
-    border: 2px solid red; /* Add a red border */
-    border-radius: 10px; /* Make the border edges rounded */
-    padding: 5px 10px; /* Add padding for better appearance */
-    display: inline-block; /* Ensure the border wraps tightly around the text */
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 5px 10px;
 }
 
+/* QUESTION */
 #questionContainer {
     text-align: left;
-    margin: 0 auto;
-    max-width: 95%; /* Slightly larger width */
+    max-width: 95%;
+    margin: auto;
 }
 
-#questionContainer h3 {
-    font-size: 18px; /* Reduced font size for Question 5 */
-}
-
-.green { background: green; color: white; padding: 8px; margin: 5px; border-radius: 5px;}
-.red { background: red; color: white; padding: 8px; margin: 5px; border-radius: 5px;}
-.blue { background: skyblue; color: white; padding: 8px; margin: 5px; border-radius: 5px;}
-
-.buttons button {
-    border-radius: 5px; /* Reduced the border-radius for a subtle rounding effect */
-}
-
-.submit-btn {
-    border-radius: 5px; /* Match the style of the "Back to Questions" button */
-    background-color: #6c757d; /* Match the grey color */
-    color: white;
-}
-
-.submit-btn, #answerKeyPage button, #home button {
-    border-radius: 5px; /* Match the rounded edges of the Next button */
-}
-
-/* Add styles for unattempted questions */
-.grey {
-    background-color: grey;
-    color: white;
-    padding: 8px;
-    margin: 5px;
-    border-radius: 5px;
-    text-align: center;
+/* STATUS BOX (COMMON STYLE) */
+.status-box {
     display: inline-block;
     width: 40px;
     height: 40px;
     line-height: 40px;
+    text-align: center;
+    margin: 5px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
+/* COLORS */
+.green { background-color: green; }
+.grey  { background-color: grey; }
+.blue  { background-color: skyblue; color: black; }
 
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    section {
-        padding: 20px;
-    }
-
-    button {
-        font-size: 18px;
-        padding: 12px 24px;
-    }
-
-    #timer {
-        font-size: 20px;
-    }
-
-    #questionContainer {
-        font-size: 16px; /* Larger text for questions */
-    }
+/* BUTTON GROUP */
+.buttons button {
+    border-radius: 5px;
 }
 
+/* SUBMIT BUTTON */
+.submit-btn {
+    background-color: #6c757d;
+}
+
+/* LEGEND */
 .legend {
     margin: 20px 0;
     display: flex;
     justify-content: center;
     gap: 20px;
     align-items: center;
-    font-size: 16px;
 }
 
 .legend span {
-    display: inline-block;
     width: 20px;
     height: 20px;
-    margin-right: 5px;
+    display: inline-block;
     border-radius: 3px;
 }
 
-.legend .green {
-    background-color: green;
-}
-
-.legend .red {
-    background-color: red;
-}
-
-.legend .grey {
-    background-color: grey;
+/* RESULT PAGE */
+#resultPage {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
 }
 
 #resultChart {
-    max-width: 400px; /* Set a smaller size for the chart */
-    margin: 0 auto; /* Center the chart */
+    max-width: 400px;
+    margin: auto;
 }
 
-#resultPage {
-    padding: 20px;
-    background-color: #f8f9fa; /* Light background for better readability */
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#resultPage h2 {
-    margin-bottom: 20px;
-}
-
-#quizTopic {
-    background-color: yellow; /* Set yellow background color for the quiz topic */
-    padding: 5px;
-    display: inline-block;
-    border-radius: 5px;
-}
-
+/* ANSWER KEY */
 #answerKeyPage {
-    padding: 20px;
-    text-align: left;
     max-width: 600px;
-    margin: 0 auto;
-    background-color: #f8f9fa; /* Light background for better readability */
-    border: 1px solid #ddd;
+    margin: auto;
+    text-align: left;
+    background: #f8f9fa;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#answerKeyPage h2 {
-    text-align: center; /* Ensure the "Answer Key" heading is centered */
-    font-weight: bold;
-    margin-bottom: 20px;
-    background-color: #007bff; /* Bootstrap primary color */
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#answerKeyPage div {
-    margin-bottom: 15px;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-#answerKeyPage div:last-child {
-    border-bottom: none;
-}
-
-#answerKeyPage .correct-answer {
-    font-weight: bold;
-    color: #28a745; /* Bootstrap success color */
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    button {
+        font-size: 16px;
+    }
 }

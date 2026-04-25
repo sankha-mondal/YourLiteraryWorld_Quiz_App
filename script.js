@@ -1,90 +1,68 @@
 let questions = [
-    {
-        question: "Capital of India?",
-        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
-        answer: 1
-    },
-    { 
-        question: "2 + 2 = ?", 
-        options: ["3", "4", "5", "6"], 
-        answer: 1 
-    },
-    { 
-        question: "Largest planet?", 
-        options: ["Earth", "Mars", "Jupiter", "Saturn"], 
-        answer: 2
-    },
-    { 
-        question: "HTML stands for?", 
-        options: ["Hyper Text Markup Language", "HighText", "Home Tool", "None"], 
-        answer: 0 
-    },
-    { 
-        question: "CSS is used for?", 
-        options: ["Styling", "Database", "Logic", "None"], 
-        answer: 0 
-    },
-    { 
-        question: "JS is?", 
-        options: ["Programming Language", "Database", "Server", "None"], 
-        answer: 0 
-    },
-    { 
-        question: "Sun rises from?", 
-        options: ["West", "North", "East", "South"], 
-        answer: 2 
-    },
-    { 
-        question: "5 x 5?", 
-        options: ["10", "20", "25", "30"], 
-        answer: 2 
-    },
-    { 
-        question: "Water formula?", 
-        options: ["CO2", "H2O", "O2", "H2"], 
-        answer: 1 
-    },
-    { 
-        question: "Fastest animal?", 
-        options: ["Tiger", "Cheetah", "Lion", "Dog"], 
-        answer: 1 
-    }
+    { question: "Capital of India?", options: ["Mumbai", "Delhi", "Kolkata", "Chennai"], answer: 1 },
+    { question: "2 + 2 = ?", options: ["3", "4", "5", "6"], answer: 1 },
+    { question: "Largest planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], answer: 2 },
+    { question: "HTML stands for?", options: ["Hyper Text Markup Language", "HighText", "Home Tool", "None"], answer: 0 },
+    { question: "CSS is used for?", options: ["Styling", "Database", "Logic", "None"], answer: 0 },
+    { question: "JS is?", options: ["Programming Language", "Database", "Server", "None"], answer: 0 },
+    { question: "Sun rises from?", options: ["West", "North", "East", "South"], answer: 2 },
+    { question: "5 x 5?", options: ["10", "20", "25", "30"], answer: 2 },
+    { question: "Water formula?", options: ["CO2", "H2O", "O2", "H2"], answer: 1 },
+    { question: "Fastest animal?", options: ["Tiger", "Cheetah", "Lion", "Dog"], answer: 1 }
 ];
 
 let currentQuestion = 0;
-let userAnswers = Array(10).fill(null);
-let marked = Array(10).fill(false);
-let timeLeft = 6*60;     // 6 minutes in seconds
+let userAnswers = Array(questions.length).fill(null);
+let marked = Array(questions.length).fill(false);
+let timeLeft = 6 * 60;
 let timerInterval;
+let resultChartInstance = null;
 
+/* START QUIZ */
 function startQuiz() {
+    timeLeft = 6 * 60;
+
     document.getElementById("home").classList.add("hidden");
     document.getElementById("quizPage").classList.remove("hidden");
+
     loadQuestion();
     startTimer();
 }
 
+/* LOAD QUESTION */
 function loadQuestion() {
     let q = questions[currentQuestion];
-    document.getElementById("questionNumber").innerText = `Question ${currentQuestion + 1}/${questions.length}`; // Updated to show current question out of total
+
+    document.getElementById("questionNumber").innerText =
+        `Question ${currentQuestion + 1}/${questions.length}`;
+
     let container = document.getElementById("questionContainer");
     container.innerHTML = `<h3>${q.question}</h3>`;
+
     q.options.forEach((opt, index) => {
         let div = document.createElement("div");
         div.classList.add("option");
-        if (userAnswers[currentQuestion] === index) div.classList.add("selected");
+
+        if (userAnswers[currentQuestion] === index) {
+            div.classList.add("selected");
+        }
+
         div.innerText = opt;
         div.onclick = () => selectOption(index);
+
         container.appendChild(div);
     });
-    updateNavigationButtons(); // Update button states after loading question
+
+    updateNavigationButtons();
 }
 
+/* SELECT OPTION */
 function selectOption(index) {
     userAnswers[currentQuestion] = index;
     loadQuestion();
 }
 
+/* NAVIGATION */
 function nextQuestion() {
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
@@ -99,10 +77,12 @@ function prevQuestion() {
     }
 }
 
+/* MARK REVISIT */
 function markRevisit() {
-    marked[currentQuestion] = true;
+    marked[currentQuestion] = !marked[currentQuestion]; // toggle
 }
 
+/* PREVIEW */
 function showPreview() {
     document.getElementById("quizPage").classList.add("hidden");
     document.getElementById("previewPage").classList.remove("hidden");
@@ -112,38 +92,56 @@ function showPreview() {
 
     userAnswers.forEach((ans, i) => {
         let div = document.createElement("div");
-        if (ans !== null) {
-            div.className = "green"; // Attempted
+
+        if (marked[i]) {
+            div.className = "status-box blue";
+        } else if (ans !== null) {
+            div.className = "status-box green";
         } else {
-            div.className = "grey"; // Unattempted
+            div.className = "status-box grey";
         }
-        div.innerText = `Q${i + 1}`;
+
+        div.innerText = i + 1;
+
+        /* CLICK TO JUMP */
+        div.onclick = () => {
+            currentQuestion = i;
+            backToQuestions();
+        };
+
         overview.appendChild(div);
     });
+
+    /* REVISIT COUNT */
+    let count = marked.filter(m => m).length;
+    document.getElementById("revisitCount").innerText =
+        `Marked for Revisit: ${count}`;
 }
 
+/* TIMER */
 function startTimer() {
-    // Clear any existing timer to avoid multiple intervals
-    if (timerInterval) {
-        clearInterval(timerInterval);
-    }
+    if (timerInterval) clearInterval(timerInterval);
 
     timerInterval = setInterval(() => {
         if (timeLeft > 0) {
             timeLeft--;
-            let minutes = Math.floor(timeLeft / 60);
-            let seconds = timeLeft % 60;
+
+            let min = Math.floor(timeLeft / 60);
+            let sec = timeLeft % 60;
+
             document.getElementById("timer").innerText =
-                `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                `${min}:${sec < 10 ? '0' : ''}${sec}`;
         } else {
             clearInterval(timerInterval);
-            submitQuiz(); // Automatically submit the quiz when time is up
+            submitQuiz();
         }
     }, 1000);
 }
 
+/* SUBMIT */
 function submitQuiz() {
     clearInterval(timerInterval);
+
     document.getElementById("previewPage").classList.add("hidden");
     document.getElementById("quizPage").classList.add("hidden");
     document.getElementById("resultPage").classList.remove("hidden");
@@ -156,7 +154,16 @@ function submitQuiz() {
         else wrong++;
     });
 
-    new Chart(document.getElementById("resultChart"), {
+    /* SCORE TEXT */
+    document.getElementById("resultPage").innerHTML +=
+        `<h3 style="text-align:center">Score: ${correct}/${questions.length}</h3>`;
+
+    /* FIX CHART DUPLICATION */
+    if (resultChartInstance) {
+        resultChartInstance.destroy();
+    }
+
+    resultChartInstance = new Chart(document.getElementById("resultChart"), {
         type: 'pie',
         data: {
             labels: ["Correct", "Wrong", "Unattempted"],
@@ -168,6 +175,7 @@ function submitQuiz() {
     });
 }
 
+/* ANSWER KEY */
 function showAnswerKey() {
     document.getElementById("resultPage").classList.add("hidden");
     document.getElementById("answerKeyPage").classList.remove("hidden");
@@ -178,30 +186,21 @@ function showAnswerKey() {
     questions.forEach((q, i) => {
         let div = document.createElement("div");
         div.innerHTML = `<h4>Q${i + 1}: ${q.question}</h4>
-                         <p>Correct Answer: ${q.options[q.answer]}</p>`;
+                         <p class="correct-answer">Correct: ${q.options[q.answer]}</p>`;
         container.appendChild(div);
     });
 }
 
+/* NAV BUTTON CONTROL */
 function updateNavigationButtons() {
-    const prevButton = document.querySelector('.buttons button:nth-child(1)'); // Assuming the first button is "Previous"
-    const nextButton = document.querySelector('.buttons button:nth-child(3)'); // Assuming the third button is "Next"
+    const prev = document.querySelector('.buttons button:nth-child(1)');
+    const next = document.querySelector('.buttons button:nth-child(3)');
 
-    // Disable "Previous" button on the first question
-    if (currentQuestion === 0) {
-        prevButton.disabled = true;
-    } else {
-        prevButton.disabled = false;
-    }
-
-    // Disable "Next" button on the last question
-    if (currentQuestion === questions.length - 1) {
-        nextButton.disabled = true;
-    } else {
-        nextButton.disabled = false;
-    }
+    prev.disabled = currentQuestion === 0;
+    next.disabled = currentQuestion === questions.length - 1;
 }
 
+/* BACK */
 function backToQuestions() {
     document.getElementById("previewPage").classList.add("hidden");
     document.getElementById("quizPage").classList.remove("hidden");
