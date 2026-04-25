@@ -29,6 +29,7 @@ function start() {
 
 function startExam() {
     document.getElementById("homePage").classList.add("hidden");
+    document.getElementById("homeFooter").style.display = "none";
     document.getElementById("quizPage").classList.remove("hidden");
     document.querySelector(".bottom-nav").classList.remove("hidden");
     document.getElementById("timerBar").classList.remove("hidden");
