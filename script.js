@@ -15,7 +15,7 @@ let current = 0;
 let answers = Array(questions.length).fill(null);
 let marked = Array(questions.length).fill(false);
 
-let time = 360;
+let time = 6 * 60;      // 6 minutes in seconds
 let timer;
 
 /* START */
@@ -129,6 +129,8 @@ function updatePalette() {
 
 /* TIMER */
 function startTimer() {
+    clearInterval(timer); // ✅ STOP old timer
+
     timer = setInterval(() => {
         time--;
 
@@ -138,14 +140,14 @@ function startTimer() {
         document.getElementById("timer").innerText =
             `${m}:${s < 10 ? "0" : ""}${s}`;
 
-        // 🔴 Warning color for last 60 sec
         if (time < 60) {
             document.getElementById("timer").style.color = "red";
-            document.getElementById("timer").style.borderColor = "red";
         }
 
-        // ⏱️ Auto submit (no confirmation)
-        if (time <= 0) autoSubmit();
+        if (time <= 0) {
+            clearInterval(timer); // ✅ stop completely
+            autoSubmit();
+        }
 
     }, 1000);
 }
@@ -201,6 +203,7 @@ function showAnswerKey() {
     document.getElementById("answerKeyPage").classList.remove("hidden");
     document.getElementById("palette").style.display = "none";
     document.getElementById("timerBar").style.display = "none";
+    document.getElementById("homeFooter").style.display = "flex";
 
     let container = document.getElementById("answerKey");
     container.innerHTML = "";
