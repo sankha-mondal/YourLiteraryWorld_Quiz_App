@@ -54,7 +54,7 @@ let questions = [
 let currentQuestion = 0;
 let userAnswers = Array(10).fill(null);
 let marked = Array(10).fill(false);
-let timeLeft = 300;
+let timeLeft = 6*60;     // 6 minutes in seconds
 let timerInterval;
 
 function startQuiz() {
