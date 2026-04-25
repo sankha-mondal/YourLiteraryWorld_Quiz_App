@@ -4,7 +4,7 @@ let questions = [
     { question: "Largest planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], answer: 2 },
     { question: "Capital of India?", options: ["Mumbai", "Delhi", "Kolkata", "Chennai"], answer: 1 },
     { question: "2 + 2 = ?", options: ["3", "4", "5", "6"], answer: 1 },
-    { question: "Largest planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], answer: 2 },
+    { question: "Largest planet?", options: ["Earth", "Mars", "Jupiter", "Jupiter"], answer: 2 },
     { question: "Capital of India?", options: ["Mumbai", "Delhi", "Kolkata", "Chennai"], answer: 1 },
     { question: "2 + 2 = ?", options: ["3", "4", "5", "6"], answer: 1 },
     { question: "Largest planet?", options: ["Earth", "Mars", "Jupiter", "Saturn"], answer: 2 },
@@ -76,7 +76,10 @@ function buildPalette() {
     questions.forEach((_, i) => {
         let div = document.createElement("div");
         div.innerText = i + 1;
-        div.onclick = () => { current = i; load(); };
+        div.onclick = () => {
+            current = i;
+            load();
+        };
         p.appendChild(div);
     });
 }
@@ -106,15 +109,33 @@ function startTimer() {
         document.getElementById("timer").innerText =
             `${m}:${s < 10 ? "0" : ""}${s}`;
 
-        if (time < 60)
+        // 🔴 Warning color for last 60 sec
+        if (time < 60) {
             document.getElementById("timer").style.color = "red";
+            document.getElementById("timer").style.borderColor = "red";
+        }
 
-        if (time <= 0) submitQuiz();
+        // ⏱️ Auto submit (no confirmation)
+        if (time <= 0) autoSubmit();
+
     }, 1000);
 }
 
-/* SUBMIT */
+/* SUBMIT WITH CONFIRMATION */
 function submitQuiz() {
+    if (!confirm("Are you sure you want to submit the exam?")) {
+        return;
+    }
+    finishQuiz();
+}
+
+/* AUTO SUBMIT (NO CONFIRM) */
+function autoSubmit() {
+    finishQuiz();
+}
+
+/* COMMON RESULT LOGIC */
+function finishQuiz() {
     clearInterval(timer);
 
     document.getElementById("quizPage").classList.add("hidden");
@@ -155,7 +176,7 @@ function showAnswerKey() {
         let user = answers[i];
 
         let status = user === null ? "unattempted" :
-                     user === q.answer ? "correct" : "wrong";
+            user === q.answer ? "correct" : "wrong";
 
         let userText = user === null ? "Not Attempted" : q.options[user];
 

@@ -94,12 +94,39 @@ section {
     background: white;
 }
 
-.bottom-nav button {
-    flex: 1;
-    padding: 15px;
-    font-size: 16px;
-    border: none;
+.nav-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
 }
+
+.bottom-nav {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 8px;
+    border-top: 1px solid #ddd;
+
+    display: block; /* ✅ THIS is the key fix */
+}
+
+.nav-row button {
+    flex: 1;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+/* Submit full width */
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 17px;
+    background: #dc3545;
+    color: white;
+}
+
+
 
 /* RESULT */
 canvas {

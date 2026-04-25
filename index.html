@@ -30,10 +30,17 @@
 
 <!-- BOTTOM NAV -->
 <div class="bottom-nav">
-    <button onclick="prevQuestion()">Prev</button>
-    <button onclick="markRevisit()" id="markBtn">Mark</button>
-    <button onclick="nextQuestion()">Next</button>
-    <button onclick="submitQuiz()">Submit</button>
+    
+    <div class="nav-row">
+        <button onclick="prevQuestion()">Prev</button>
+        <button onclick="markRevisit()" id="markBtn">Mark</button>
+        <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <div class="nav-row">
+        <button class="submit-btn" onclick="submitQuiz()">Submit</button>
+    </div>
+
 </div>
 
 <!-- RESULT -->
