@@ -126,6 +126,10 @@ section {
     color: white;
 }
 
+#markBtn {
+    background-color: skyblue;
+    color: black;
+}
 
 
 /* RESULT */
