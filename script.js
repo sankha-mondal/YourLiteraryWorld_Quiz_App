@@ -27,6 +27,15 @@ function start() {
     startTimer();
 }
 
+function startExam() {
+    document.getElementById("homePage").classList.add("hidden");
+    document.getElementById("quizPage").classList.remove("hidden");
+    document.querySelector(".bottom-nav").classList.remove("hidden");
+    document.getElementById("timerBar").classList.remove("hidden");
+
+    start(); // existing function
+}
+
 /* LOAD QUESTION */
 function load() {
     let q = questions[current];

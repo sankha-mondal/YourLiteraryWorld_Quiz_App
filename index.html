@@ -10,16 +10,38 @@
 
 <!-- HEADER -->
 <header>
-    <div>Exam Portal</div>
+    <div class="logo">
+        📘 Exam Portal
+    </div>
+    <div class="menu">☰</div>
 </header>
 
-<!-- TIMER (NEW POSITION) -->
-<div id="timerBar">
+<!-- HOME PAGE -->
+<section id="homePage">
+
+    <div class="tag">⭐ INDIA'S #1 MOCK TEST PLATFORM</div>
+
+    <h1>
+        Crack Your <span>Exam</span><br>
+        With India's <span>Best Practice App</span>
+    </h1>
+
+    <p>
+        Practice daily with real exam-level questions.  
+        Improve accuracy, speed & confidence.
+    </p>
+
+    <button class="start-btn" onclick="startExam()">Start Exam →</button>
+
+</section>
+
+<!-- TIMER -->
+<div id="timerBar" class="hidden">
     <div id="timer">06:00</div>
 </div>
 
 <!-- QUIZ PAGE -->
-<section id="quizPage">
+<section id="quizPage" class="hidden">
 
     <div id="questionNumber"></div>
     <div id="questionContainer"></div>
@@ -29,12 +51,12 @@
 </section>
 
 <!-- BOTTOM NAV -->
-<div class="bottom-nav">
+<div class="bottom-nav hidden">
     
     <div class="nav-row">
         <button onclick="prevQuestion()">Prev</button>
         <button onclick="markRevisit()" id="markBtn">Mark</button>
-        <button onclick="nextQuestion()" style="background-color: green; color: white;">Next</button>
+        <button onclick="nextQuestion()" class="next-btn">Next</button>
     </div>
 
     <div class="nav-row">
