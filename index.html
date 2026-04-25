@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Exam App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,80 +9,81 @@
 
 <body>
 
-<!-- HEADER -->
-<header>
-    <div class="logo">
-        <img src="logo.jpeg" width="35" height="35" alt="Logo" id="logo">
-        YourLiteraryWorld
-    </div>
-    <div class="menu">☰</div>
-</header>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="logo.jpeg" width="35" height="35" alt="Logo" id="logo">
+            YourLiteraryWorld
+        </div>
+        <div class="menu">☰</div>
+    </header>
 
-<!-- HOME PAGE -->
-<section id="homePage">
+    <!-- HOME PAGE -->
+    <section id="homePage">
 
-    <div class="tag">⭐ INDIA'S #1 MOCK TEST PLATFORM</div>
+        <div class="tag">⭐ INDIA'S #1 MOCK TEST PLATFORM</div>
 
-    <h1>
-        Crack Your <span>Exam</span><br>
-        With India's <span>Best Practice App</span>
-    </h1>
+        <h1>
+            Crack Your <span>Exam</span><br>
+            With India's <span>Best Practice App</span>
+        </h1>
 
-    <p>
-        Practice daily with real exam-level questions.  
-        Improve accuracy, speed & confidence.
-    </p>
+        <p>
+            Practice daily with real exam-level questions.
+            Improve accuracy, speed & confidence.
+        </p>
 
-    <button class="start-btn" onclick="startExam()">Start Exam →</button>
+        <button class="start-btn" onclick="startExam()">Start Exam →</button>
 
-</section>
+    </section>
 
-<!-- TIMER -->
-<div id="timerBar" class="hidden">
-    <div id="timer">06:00</div>
-</div>
-
-<!-- QUIZ PAGE -->
-<section id="quizPage" class="hidden">
-
-    <div id="questionNumber"></div>
-    <div id="questionContainer"></div>
-    <br>
-    <div id="palette"></div>
-
-</section>
-
-<!-- BOTTOM NAV -->
-<div class="bottom-nav hidden">
-    
-    <div class="nav-row">
-        <button onclick="prevQuestion()">Prev</button>
-        <button onclick="markRevisit()" id="markBtn">Mark</button>
-        <button onclick="nextQuestion()" class="next-btn">Next</button>
+    <!-- TIMER -->
+    <div id="timerBar" class="hidden">
+        <div id="timer">06:00</div>
     </div>
 
-    <div class="nav-row">
-        <button class="submit-btn" onclick="submitQuiz()">Submit</button>
+    <!-- QUIZ PAGE -->
+    <section id="quizPage" class="hidden">
+
+        <div id="questionNumber"></div>
+        <div id="questionContainer"></div>
+
+    </section>
+
+    <!-- BOTTOM NAV -->
+
+    <div class="bottom-nav hidden">
+        <div class="nav-row">
+            <button onclick="prevQuestion()">Prev</button>
+            <button onclick="markRevisit()" id="markBtn">Mark</button>
+            <button onclick="nextQuestion()" class="next-btn">Next</button>
+        </div>
+
+        <div class="nav-row">
+            <button class="submit-btn" onclick="submitQuiz()">Submit</button>
+        </div>
     </div>
 
-</div>
+    <!-- ✅ PALETTE MOVED HERE -->
+    <div id="palette" class="hidden"></div>
 
-<!-- RESULT -->
-<section id="resultPage" class="hidden">
-    <h2>Result</h2>
-    <canvas id="chart"></canvas>
-    <h3 id="scoreText"></h3>
-    <button onclick="showAnswerKey()">Review Answers</button>
-</section>
+    <!-- RESULT -->
+    <section id="resultPage" class="hidden">
+        <h2>Result</h2>
+        <canvas id="chart"></canvas>
+        <h3 id="scoreText"></h3>
+        <button onclick="showAnswerKey()">Review Answers</button>
+    </section>
 
-<!-- ANSWER KEY -->
-<section id="answerKeyPage" class="hidden">
-    <h2>Answer Review</h2>
-    <div id="answerKey"></div>
-</section>
+    <!-- ANSWER KEY -->
+    <section id="answerKeyPage" class="hidden">
+        <h2>Answer Review</h2>
+        <div id="answerKey"></div>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>

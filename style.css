@@ -112,6 +112,10 @@ header {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 8px;
+    text-align: center;
+    padding: 12px;
+    background: lightgoldenrodyellow;
+    border-top: 1px solid #ddd;
 }
 
 .box {
@@ -133,6 +137,7 @@ header {
     background: white;
     padding: 8px;
     border-top: 1px solid #ddd;
+    z-index: 1000;
 }
 
 .nav-row {
@@ -179,7 +184,7 @@ canvas {
 
 /* HIDDEN */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 #markBtn {

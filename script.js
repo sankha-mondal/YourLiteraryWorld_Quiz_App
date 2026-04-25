@@ -32,6 +32,7 @@ function startExam() {
     document.getElementById("quizPage").classList.remove("hidden");
     document.querySelector(".bottom-nav").classList.remove("hidden");
     document.getElementById("timerBar").classList.remove("hidden");
+    document.getElementById("palette").classList.remove("hidden");
 
     start(); // existing function
 }
@@ -41,7 +42,7 @@ function load() {
     let q = questions[current];
 
     document.getElementById("questionNumber").innerText =
-        `Q ${current + 1}/${questions.length}`;
+        `Q. ${current + 1}/${questions.length}`;
 
     let html = `<h3>${q.question}</h3>`;
 
@@ -150,6 +151,8 @@ function finishQuiz() {
     document.getElementById("quizPage").classList.add("hidden");
     document.querySelector(".bottom-nav").style.display = "none";
     document.getElementById("resultPage").classList.remove("hidden");
+    document.getElementById("palette").style.display = "none";
+    document.getElementById("timerBar").style.display = "none";
 
     let correct = 0, wrong = 0, un = 0;
 
@@ -177,6 +180,8 @@ function finishQuiz() {
 function showAnswerKey() {
     document.getElementById("resultPage").classList.add("hidden");
     document.getElementById("answerKeyPage").classList.remove("hidden");
+    document.getElementById("palette").style.display = "none";
+    document.getElementById("timerBar").style.display = "none";
 
     let container = document.getElementById("answerKey");
     container.innerHTML = "";
