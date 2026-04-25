@@ -112,25 +112,32 @@ function showPreview() {
 
     userAnswers.forEach((ans, i) => {
         let div = document.createElement("div");
-        if (ans !== null) div.className = "green";
-        else if (marked[i]) div.className = "blue";
-        else div.className = "red";
+        if (ans !== null) {
+            div.className = "green"; // Attempted
+        } else {
+            div.className = "grey"; // Unattempted
+        }
         div.innerText = `Q${i + 1}`;
         overview.appendChild(div);
     });
 }
 
 function startTimer() {
-    timerInterval = setInterval(() => {
-        timeLeft--;
-        let minutes = Math.floor(timeLeft / 60);
-        let seconds = timeLeft % 60;
-        document.getElementById("timer").innerText =
-            `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    // Clear any existing timer to avoid multiple intervals
+    if (timerInterval) {
+        clearInterval(timerInterval);
+    }
 
-        if (timeLeft <= 0) {
+    timerInterval = setInterval(() => {
+        if (timeLeft > 0) {
+            timeLeft--;
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            document.getElementById("timer").innerText =
+                `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        } else {
             clearInterval(timerInterval);
-            submitQuiz();
+            submitQuiz(); // Automatically submit the quiz when time is up
         }
     }, 1000);
 }
