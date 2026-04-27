@@ -57,6 +57,42 @@ let questions = [
         answer: 1,
         explanation: "Delhi is the capital of India."
     },
+    {
+        question: "2 + 2 = ?",
+        options: ["3", "4", "5", "6"],
+        answer: 1,
+        explanation: "2 + 2 equals 4."
+    },
+    {
+        question: "Largest planet?",
+        options: ["Earth", "Mars", "Jupiter", "Saturn"],
+        answer: 2,
+        explanation: "Jupiter is the largest planet in our solar system."
+    },
+    {
+        question: "Capital of India?",
+        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        answer: 1,
+        explanation: "Delhi is the capital of India."
+    },
+    {
+        question: "2 + 2 = ?",
+        options: ["3", "4", "5", "6"],
+        answer: 1,
+        explanation: "2 + 2 equals 4."
+    },
+    {
+        question: "Largest planet?",
+        options: ["Earth", "Mars", "Jupiter", "Saturn"],
+        answer: 2,
+        explanation: "Jupiter is the largest planet in our solar system."
+    },
+    {
+        question: "Capital of India?",
+        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        answer: 1,
+        explanation: "Delhi is the capital of India."
+    },
 ];
 
 let current = 0;
@@ -270,6 +306,7 @@ function showAnswerKey() {
                 <p>Your: <span class="${status}">${userText}</span></p>
                 <p>Correct: <span class="correct">${q.options[q.answer]}</span></p>
                 <p>Explanation: ${q.explanation}</p>
+                <hr>
             </div>
         `;
     });

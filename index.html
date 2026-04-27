@@ -27,53 +27,107 @@
     </div>
 
     <!-- HOME PAGE -->
-    <section id="homePage">
+    <section id="homePage" class="dark-home">
 
-        <div class="tag">⭐ INDIA'S #1 MOCK TEST PLATFORM</div>
+        <!-- HERO -->
+        <div class="hero">
 
-        <h1>
-            Crack Your <span>Exam</span><br>
-            With India's <span>Best Practice App</span>
-        </h1>
+            <div class="hero-text">
+                <div class="tag">✨ Your Dream. Our Guidance.</div>
 
-        <p>
-            Practice daily with real exam-level questions.
-            Improve accuracy, speed & confidence.
-        </p>
+                <h1 class="glow-text">
+                    Crack UGC NET <br>
+                    <span>English Literature</span><br>
+                    Like Never Before
+                </h1>
 
-        <button class="start-btn" onclick="startExam()">Start Exam →</button>
+                <p>
+                    Smart strategies. Expert guidance. Quality content.
+                    Everything you need to crack your exam with confidence.
+                </p>
 
-    </section>
+                <!-- <button class="start-btn glow-btn" onclick="startExam()">
+                Start Exam →
+            </button> -->
+            </div>
 
-    <!-- TIMER -->
-    <div id="timerBar" class="hidden">
-        <div id="timer">06:00</div>
-    </div>
+            <!-- <div class="hero-visual">
+            <div class="glass-card one">Knowledge</div>
+            <div class="glass-card two">Preparation</div>
+            <div class="glass-card three">Success</div>
+        </div> -->
 
-    <!-- QUIZ PAGE -->
-    <section id="quizPage" class="hidden">
-
-        <div id="questionNumber"></div>
-        <div id="questionContainer"></div>
-
-    </section>
-
-    <!-- BOTTOM NAV -->
-
-    <div class="bottom-nav hidden">
-        <div class="nav-row">
-            <button onclick="prevQuestion()"><b>Prev</b></button>
-            <button onclick="markRevisit()" id="markBtn"><b>Mark</b></button>
-            <button onclick="nextQuestion()" class="next-btn"><b>Next</b></button>
         </div>
 
-        <div class="nav-row">
-            <button class="submit-btn" onclick="submitQuiz()"><b>Submit</b></button>
-        </div>
-    </div>
+        <!-- FEATURES -->
+        <div class="features">
+            <div><b>👨‍🏫 Mentors</b></div>
+            <div><b>🎯 Focus</b></div>
+            <div><b>📈 Results</b></div>
+            <div><b>🏆 Success</b></div>
 
-    <!-- ✅ PALETTE MOVED HERE -->
-    <div id="palette" class="hidden"></div>
+        </div>
+
+        <!-- CARDS -->
+        <div class="cards">
+            <br>
+            <div class="card purple glow-card">
+                <h4><b>01</b></h4>
+                <h2>Check out the <span id="course">Course</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</h2>
+                <p>Complete coverage of Paper 1, Paper 2 and Literary Theory. Live classes, notes, PYQs & more.</p>
+            </div>
+
+            <div class="card gold glow-card" onclick="startExam()">
+                <h4><b>02</b></h4>
+                <h2>Premium <span id="mock">Mock Test</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</h2>
+                <p>Real exam experience + Details analytics.&nbsp;&nbsp; Know where you stand.</p>
+            </div>
+
+            <div class="card bluee glow-card">
+                <h4><b>03</b></h4>
+                <h2>Free <span id="resource">Resources</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</h2>
+                <p>All important content, PYQs, e-books and more—absolutely free.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+        <!-- TIMER -->
+        <div id="timerBar" class="hidden">
+            <div id="timer">06:00</div>
+        </div>
+
+        <!-- QUIZ PAGE -->
+        <section id="quizPage" class="hidden">
+            <div id="questionNumber"></div>
+            <div id="questionContainer"></div>
+        </section>
+
+        <!-- BOTTOM NAV -->
+
+        <div class="bottom-nav hidden">
+            <div class="nav-row">
+                <button onclick="prevQuestion()"><b>Prev</b></button>
+                <button onclick="markRevisit()" id="markBtn"><b>Mark</b></button>
+                <button onclick="nextQuestion()" class="next-btn"><b>Next</b></button>
+            </div>
+
+            <div class="nav-row">
+                <button class="submit-btn" onclick="submitQuiz()"><b>Submit</b></button>
+            </div>
+        </div>
+
+        <!-- ✅ PALETTE MOVED HERE -->
+        <div id="palette" class="hidden"></div>
+    
 
     <!-- RESULT -->
     <section id="resultPage" class="hidden">
@@ -94,17 +148,20 @@
 
         <div class="footer-left">
             <h3>YourLiteraryWorld</h3>
-            <p>
-                Practice mock tests with real exam-level questions.
-                Improve speed, accuracy, and confidence with our smart quiz platform.
-            </p>
+            <pre>
+Literature is not just words.
+It's a way to understand the world.
+
+<hr style="border: none; height: 2px; background-color: rgb(95, 17, 95);">
+© 2024 Lit-Net. All Rights Reserved.
+            </pre>
         </div>
 
         <div class="footer-right">
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/15707/15707749.png"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/3670/3670151.png"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/2111/2111646.png"></a>
         </div>
 
     </footer>
