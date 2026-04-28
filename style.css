@@ -393,12 +393,19 @@ canvas {
     justify-content: space-between;
 }
 
+.footer-right {
+    display: flex;
+    flex-direction: row;   /* horizontal */
+    align-items: center;
+    justify-content: center; /* or center if you prefer */
+    gap: 30px; /* spacing between icons */
+}
+
 .footer-right img {
     width: 32px;
-    background: white;
-    padding: 5px;
-    margin-left: 32px;
+    height: 32px;
     border-radius: 50%;
+    transition: 0.3s;
 }
 
 /* ========================= */
