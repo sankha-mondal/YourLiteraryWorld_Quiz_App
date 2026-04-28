@@ -84,7 +84,10 @@
                 <h2>Premium <span id="mock">Mock Test</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→</h2>
-                <p>Real exam experience + Details analytics.&nbsp;&nbsp; Know where you stand.</p>
+                <p>Real exam experience + Details analytics.&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp; Topic wise Mock Tests.
+                    Know where you stand.</p>
             </div>
 
             <div class="card bluee glow-card">
@@ -100,34 +103,34 @@
     </section>
 
 
-        <!-- TIMER -->
-        <div id="timerBar" class="hidden">
-            <div id="timer">06:00</div>
+    <!-- TIMER -->
+    <div id="timerBar" class="hidden">
+        <div id="timer">06:00</div>
+    </div>
+
+    <!-- QUIZ PAGE -->
+    <section id="quizPage" class="hidden">
+        <div id="questionNumber"></div>
+        <div id="questionContainer"></div>
+    </section>
+
+    <!-- BOTTOM NAV -->
+
+    <div class="bottom-nav hidden">
+        <div class="nav-row">
+            <button onclick="prevQuestion()"><b>Prev</b></button>
+            <button onclick="markRevisit()" id="markBtn"><b>Mark</b></button>
+            <button onclick="nextQuestion()" class="next-btn"><b>Save & Next</b></button>
         </div>
 
-        <!-- QUIZ PAGE -->
-        <section id="quizPage" class="hidden">
-            <div id="questionNumber"></div>
-            <div id="questionContainer"></div>
-        </section>
-
-        <!-- BOTTOM NAV -->
-
-        <div class="bottom-nav hidden">
-            <div class="nav-row">
-                <button onclick="prevQuestion()"><b>Prev</b></button>
-                <button onclick="markRevisit()" id="markBtn"><b>Mark</b></button>
-                <button onclick="nextQuestion()" class="next-btn"><b>Next</b></button>
-            </div>
-
-            <div class="nav-row">
-                <button class="submit-btn" onclick="submitQuiz()"><b>Submit</b></button>
-            </div>
+        <div class="nav-row">
+            <button class="submit-btn" onclick="submitQuiz()"><b>Submit</b></button>
         </div>
+    </div>
 
-        <!-- ✅ PALETTE MOVED HERE -->
-        <div id="palette" class="hidden"></div>
-    
+    <!-- ✅ PALETTE MOVED HERE -->
+    <div id="palette" class="hidden"></div>
+
 
     <!-- RESULT -->
     <section id="resultPage" class="hidden">

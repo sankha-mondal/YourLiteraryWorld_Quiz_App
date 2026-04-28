@@ -1,96 +1,96 @@
 let questions = [
     {
-        question: "Capital of India?",
-        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
-        answer: 1, explanation: "Delhi is the capital of India."
+        question: "1. According to Saussure, the relationship between the signifier and the signified is fundamentally arbitrary. What is the most significant implication of this principle for the study of language? ",
+        options: ["A. It means that words can have multiple meanings depending on context.", "B. It suggests that language is an ever-evolving system and can never be fully documented", "C. It establishes that the connection between a sound and a concept is based on social convention", "D. It proves that all languages must share a common origin."],
+        answer: 3 - 1, explanation: ""
     },
     {
-        question: "2 + 2 = ?",
-        options: ["3", "4", "5", "6"],
-        answer: 1,
-        explanation: "2 + 2 equals 4."
+        question: "2. How does Saussure's distinction between langue and parole shift the focus of linguistic study from a historical approach to a structural one? ",
+        options: ["A. By prioritizing the evolution of words (parole) over the systematic rules of a language (langue). ", "B. By emphasizing the study of the abstract, social system of language (langue) rather than the individual, concrete instances of speech (parole)", "C.By arguing that individual speech acts (parole) are more important for understanding a language's structure than its underlying grammar (langue). ", "D. By rejecting the idea that language is a social phenomenon in favor of a purely individualistic view. "],
+        answer: 2 - 1,
+        explanation: ""
+    },
+    {
+        question: "3. Saussure contended that the VALUE of a linguistic sign is determined by its difference from all other signs within the system. What is the best example of this concept? ",
+        options: ["A. The word 'car' has value because it refers to a specific physical object in the world. ", "B. The word 'cat' has value because it is not 'bat' 'hat' or 'mat.'", "The value of the word 'happy' is determined by how often it is used. ", "The sound of the letter 'a' changes its value depending on the language"],
+        answer: 2 - 1, explanation: ""
+    },
+    {
+        question: "4. From a Saussurian perspective, what is the key difference between synchronic and diachronic linguistics? ",
+        options: ["A. Synchronic study focuses on the origins of words, while diachronic study focuses on their current use.", "B. Synchronic study looks at the grammatical structure of a language, while diachronic study looks at its social context.", "C.Synchronic study focuses on the written word, while diachronic study focuses on spoken language. ", "D. Synchronic study analyzes language at a fixed point in time, while diachronic study examines language changes over time"],
+        answer: 4 - 1,
+        explanation: ""
+    },
+    {
+        question: "5. A sign in Saussure's theory is composed of a signifier and a signified. Consider the word 'tree'. What correctly identifies these two components? ",
+        options: ["A. The signifier is the physical sound or image of the word 'tree', and the signified is the mental concept of a tree", "B. The signifier is the written word tree' on a page, and the signified is a drawing of a tree.", "C.The signifier is the actual tree in the physical world, and the signified is the word 'tree'.", "D. The signifier is the word 'tree' in one language, and the signified is the word for 'tree' in another language."],
+        answer: 1 - 1,
+        explanation: ""
+    },
+    {
+        question: "6. The term 'arbitrary' in Saussure's theory refers to the relationship between the signifier and signified. What is the opposite of this concept?",
+        options: ["A. A relationship that is based on social convention.", "B. A relationship that is based on a natural, causal, or iconic connection", "C. Arelationship that is based on the emotional connotations of a word.", "D. A relationship that is based on the grammatical rules of a language."],
+        answer: 2 - 1,
+        explanation: ""
+    },
+    {
+        question: "7. Which of the following best explains how Saussure's concepts of synchrony and diachrony can be applied to literary analysis? ",
+        options: ["A. Synchronic analysis examines the social and cultural context of a single literary work at the time of its creation, while diachronic analysis traces the influences of earlier works on it", "B.Synchronic analysis studies the evolution of a genre over time, while diachronic analysis studies a single text.", "C. Synchronic analysis focuses on the author's biography, while diachronic analysis focuses on the reader's interpretation.", "D. Synchronic analysis studies the formal structure of a literary work (plot, character, setting), while diachronic analysis examines how the work's themes change over time."],
+        answer: 1 - 1,
+        explanation: ""
+    },
+    {
+        question: "8. What is the key difference between langue and parole? ",
+        options: ["A. Langue is the individual act of speaking or writing; parole is the underlying system of language.", "B. Langue is a social institution, parole is a psychological act of language use, personal, variable", "C.Langue is concrete and parole is abstract.", "D.Langue is the written word; parole is the spoken word."],
+        answer: 2 - 1,
+        explanation: ""
+    },
+    {
+        question: "9. Saussure argued that the linguistic sign is a 'two-sided psychological entity'! What is meant by this statement? ",
+        options: ["A. The sign is both a sound-image and a concept which are inseparable in the mind.", "B. The sign has both a spoken and a written form, which are equally important.", "C. The sign can be interpreted differently by a speaker and a listener.", "D. The sign must be a tangible object in the real world as well as an abstract idea."],
+        answer: 1 - 1,
+        explanation: ""
+    },
+    {
+        question: "10. From a Saussurian perspective, what is the key difference between synchronic and diachronic linguistics?",
+        options: ["A. Synchronic study focuses on the origins of words, while diachronic study focuses on their current use.", "B. Synchronic study looks at the grammatical structure of a language, while diachronic study looks at its social context", "C. Synchronic study focuses on the written word, while diachronic study focuses on spoken language.", "D. Synchronic study analyzes language at a fixed point in time, while diachronic study examines language changes over time."],
+        answer: 4 - 1,
+        explanation: ""
+    },
+    {
+        question: "11. Identify the infos which are not correct! ",
+        options: ["A. Course in General Linguistics— 1916, posthumous publication, Saussure", "B. Course in General Linguistics— trans. by Harris & Baskin", "C. Saussure is related to the study of PIE language & proposed Laryngeal theory", "D. Development of structuralism— early & mid 20 th C.", "E. Structuralism ain't about the unconscious foundation of the society"],
+        answer: 5 - 1,
+        explanation: ""
+    },
+    {
+        question: "12. Which of the following statements accurately describe the core principle of Structural Anthropology? A. It proposes that while cultures appear different on the surface, they are built from similar underlying mental structures. B. It seeks to prove that all cultural differences are purely a result of historical and geographical factors. C. It suggests that many cultural elements, like myths and rituals, are organized around basic patterns or opposites. D. It focuses on the unique, individual elements of a culture without attempting to find universal commonalities.",
+        options: ["A C ", "A B C D ", "A B C ", "B C D "],
+        answer: 1 - 1,
+        explanation: ""
+    },
+    {
+        question: "13. What is the purpose of myth for Lévi-Strauss? A. To provide a logical model that helps a community live with or overcome a contradiction. B. To reveal the unconscious foundations of human culture. C. To entertain people by telling fantastical stories. D. To provide a timeless foundation for a culture, even though the stories themselves represent the past. ",
+        options: ["A B D ", "B C D ", "A B C D ", "A C "],
+        answer: 1 - 1,
+        explanation: ""
+    },
+    {
+        question: "14. Language and culture analogy-Which of the following statements correctly reflect this analogy?     A. Just as language is a form of communication, culture is a form of social interaction.      B. Like phonemes in language, myths are the smallest units of culture.       C. Language has a grammar of sounds and words, and culture has a 'grammar' of underlying patterns and relationships.     D. Both language and culture have basic, hidden structural rules that organize their parts through binary oppositions. ",
+        options: ["C D", "B D", "A D ", "A B C D"],
+        answer: 1 - 1,
+        explanation: ""
     },
     {
         question: "Largest planet?",
         options: ["Earth", "Mars", "Jupiter", "Saturn"],
-        answer: 2, explanation: "Jupiter is the largest planet in our solar system."
-    },
-    {
-        question: "Capital of India?",
-        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
-        answer: 1,
-        explanation: "Delhi is the capital of India."
-    },
-    {
-        question: "2 + 2 = ?",
-        options: ["3", "4", "5", "6"],
-        answer: 1,
-        explanation: "2 + 2 equals 4."
-    },
-    {
-        question: "Largest planet?",
-        options: ["Earth", "Mars", "Jupiter", "Jupiter"],
-        answer: 2,
+        answer: 2 - 1,
         explanation: "Jupiter is the largest planet in our solar system."
     },
     {
         question: "Capital of India?",
         options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
-        answer: 1,
-        explanation: "Delhi is the capital of India."
-    },
-    {
-        question: "2 + 2 = ?",
-        options: ["3", "4", "5", "6"],
-        answer: 1,
-        explanation: "2 + 2 equals 4."
-    },
-    {
-        question: "Largest planet?",
-        options: ["Earth", "Mars", "Jupiter", "Saturn"],
-        answer: 2,
-        explanation: "Jupiter is the largest planet in our solar system."
-    },
-    {
-        question: "Capital of India?",
-        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
-        answer: 1,
-        explanation: "Delhi is the capital of India."
-    },
-    {
-        question: "2 + 2 = ?",
-        options: ["3", "4", "5", "6"],
-        answer: 1,
-        explanation: "2 + 2 equals 4."
-    },
-    {
-        question: "Largest planet?",
-        options: ["Earth", "Mars", "Jupiter", "Saturn"],
-        answer: 2,
-        explanation: "Jupiter is the largest planet in our solar system."
-    },
-    {
-        question: "Capital of India?",
-        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
-        answer: 1,
-        explanation: "Delhi is the capital of India."
-    },
-    {
-        question: "2 + 2 = ?",
-        options: ["3", "4", "5", "6"],
-        answer: 1,
-        explanation: "2 + 2 equals 4."
-    },
-    {
-        question: "Largest planet?",
-        options: ["Earth", "Mars", "Jupiter", "Saturn"],
-        answer: 2,
-        explanation: "Jupiter is the largest planet in our solar system."
-    },
-    {
-        question: "Capital of India?",
-        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
-        answer: 1,
+        answer: 1 - 1,
         explanation: "Delhi is the capital of India."
     },
 ];
@@ -303,11 +303,11 @@ function showAnswerKey() {
         container.innerHTML += `
             <div class="answer-card">
                 <h4>Q${i + 1}: ${q.question}</h4>
-                <p>Your: <span class="${status}">${userText}</span></p>
-                <p>Correct: <span class="correct">${q.options[q.answer]}</span></p>
-                <p>Explanation: ${q.explanation}</p>
+                <p><b>Your:</b> <span class="${status}">${userText}</span></p>
+                <p><b>Correct:</b> <span class="correct">${q.options[q.answer]}</span></p>
                 <hr>
             </div>
         `;
     });
 }
+
