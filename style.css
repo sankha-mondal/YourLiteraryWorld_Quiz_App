@@ -416,31 +416,61 @@ canvas {
     display: none !important;
 }
 
-/* WATERMARK ONLY FOR QUIZ + ANSWER KEY */
-#quizPage::before,
-#answerKeyPage::before {
-    content: "YourLiteraryWorld   YourLiteraryWorld   YourLiteraryWorld";
-
+/* WATERMARK USING DIV */
+.watermark1 {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 20%;
+    left: 30%;
+    transform: translate(-50%, -50%) rotate(-25deg);
 
-    width: 200%;
-    height: 200%;
-
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.05); /* dark for white bg */
-
-    transform: rotate(-30deg);
-
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
+    color: rgba(15, 13, 13, 0.123);
 
     pointer-events: none;
-    z-index: 0;
+    user-select: none;  
+}
+
+.watermark2 {
+    position: absolute;
+    top: 180%;
+    left: 30%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+
+    font-size: 28px;
+    font-weight: bold;
+    color: rgba(173, 22, 22, 0.776);
+
+    pointer-events: none;
+    user-select: none;  
+}
+
+.watermark3 {
+    position: absolute;
+    top: 355%;
+    left: 30%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+
+    font-size: 28px;
+    font-weight: bold;
+    color: rgba(35, 173, 22, 0.776);
+
+    pointer-events: none;
+    user-select: none;  
+}
+
+.watermark4 {
+    position: absolute;
+    top: 530%;
+    left: 30%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+
+    font-size: 28px;
+    font-weight: bold;
+    color: rgba(22, 70, 173, 0.776);
+
+    pointer-events: none;
+    user-select: none;  
 }
 
 
