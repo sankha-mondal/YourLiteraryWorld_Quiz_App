@@ -416,3 +416,32 @@ canvas {
     display: none !important;
 }
 
+/* WATERMARK ONLY FOR QUIZ + ANSWER KEY */
+#quizPage::before,
+#answerKeyPage::before {
+    content: "YourLiteraryWorld   YourLiteraryWorld   YourLiteraryWorld";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 200%;
+    height: 200%;
+
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.05); /* dark for white bg */
+
+    transform: rotate(-30deg);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+
