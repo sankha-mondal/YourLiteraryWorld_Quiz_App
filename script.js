@@ -106,40 +106,76 @@ let questions = [
         explanation: ""
     },
     {
-        question: "Capital of India?",
-        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
-        answer: 1 - 1,
-        explanation: "Delhi is the capital of India."
+        question: "19. According to Lévi Strauss what is the key insight of Ritualistic Psychoanalysis?",
+        options: ["A. It proves that rituals have no real effect on a person’s mental state. ", "B. It shows that symbolic acts and rituals play a psychological role in physical healing. ", "C. It demonstrates that symbols can't make unconscious conflicts explicit, allowing them to be understood and integrated.", "D. It suggests that psychological healing is an exclusively linguistic process that requires no ritual or myth."],
+        answer: 2 - 1,
+        explanation: ""
     },
     {
-        question: "Capital of India?",
-        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
-        answer: 1 - 1,
-        explanation: "Delhi is the capital of India."
+        question: "20. Identify the incorrect combination! ",
+        options: ["A. Engineering, in contrast to Bricolage— Strauss & Derrida ", "B. Engineering, a creation of bricolage", "C. Culinary triangle, an idea of Statuss, also talks about the gender roles & cooking", "D. 'Introduction to the Work of MARCEL MAUSSA' — floating Signifier appeared", "E. 'Mythologiques' — 3 volumes total, 1st The Raw and the Cooked, 2nd From Honey to Ashes"],
+        answer: 5 - 1,
+        explanation: ""
     },
     {
-        question: "Capital of India?",
-        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        question: "21. Identify the right chronology regarding Lévi Strauss works: ?",
+        options: ["A. The Elementary Structures of Kinship, 'The Structural Study of Myth', Structural Anthropology", "B. Myth and Meaning, Structural Anthropology, Sad Tropics, Tristes Tropiques ", "C. Tristes Tropiques, The Structural Study of Myth, Structural Anthropology, Myth and Meaning"],
         answer: 1 - 1,
-        explanation: "Delhi is the capital of India."
+        explanation: ""
     },
     {
-        question: "Capital of India?",
-        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
-        answer: 1 - 1,
-        explanation: "Delhi is the capital of India."
+        question: "22. Identify the incorrect option?",
+        options: ["A.'Literary Theory: A Very Short Introduction', 'The Literary in Theory'— Jonathan Culler", "B. Morphology of the Folktale— 1928, Vladimir Propp// Historical Roots of the Wonder// 51 functions", "C. 'The Pursuit of Signs: Semiotics, Literature, Deconstruction'//'On Deconstruction'— Jonathan Culler ", "D. Jonathan Culler- 'Structuralist Poetics', discusses the concept of 'literary COMPETENCE'"],
+        answer: 2 - 1,
+        explanation: ""
     },
     {
-        question: "Capital of India?",
-        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
-        answer: 1 - 1,
-        explanation: "Delhi is the capital of India."
+        question: "23. Identify the incorrect option: ?",
+        options: ["A. Vladimir Propp— 31 functions in the folktales. Wedding—the final function, Absentation— 1st function", "B. Propp’s point was to de-familiarize the ‘obviousness’ of the content of the tales he studied. ", "C. Todorov is classified as the Russian structuralist ", "D. The Fragility of Goodness//Hopes and Memory— books by Todorov, impacted holocaust studies"],
+        answer: 3 - 1,
+        explanation: ""
     },
     {
-        question: "Capital of India?",
-        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        question: "24. Which of the following information is correct:       A. Todorov— 'The Typology of Detective Fiction'        B. Todorov's the theory of fantastic occupies a zone of uncertainty between two related genres marvelous/uncanny        C. Todorov’s 'The Typology of Detective Fiction' identifies three main types of detective fiction, the whodunit, the thriller, and the suspense novel.  D. Todorov’s five-stage model of narrative —Equilibrium (1), Force (1), Disequilibrium, Force (2), Equilibrium (2)... Simplified as Equilibrium, Disruption, Recognition, Attempt to Repair, ",
+        options: ["A B C", "B C D", "A B D ", "A C D"],
         answer: 1 - 1,
-        explanation: "Delhi is the capital of India."
+        explanation: ""
+    },
+    {
+        question: "25. A. Gérard Genette – 'Narrative Discourse' considered a landmark work in narratology.   B. Genette’s three levels of narrative— ‘story’ (histoire), ‘discourse’ (récit) & narration    C. Frontiers of Narrative— associated with Genette    D. Genette– frontiers of narrative critiqued three binary oppositions, anticipating deconstruction     E. 1st opposition -Diegesis= author’s voice. Mimesis= representation of actual speech. Genette argues that pure mimesis is impossible     F. The second opposition—narration vs description, 3rd narrative vs. discourse",
+        options: ["A B C D E F", "B C D E F", "A B D E F", "A C D E F"],
+        answer: 1 - 1,
+        explanation: ""
+    },
+    {
+        question: "26. 'Zero-degree narratee' — it is associated with: ?",
+        options: ["A. Mieke Bal", "B. Claude Bremond ", "C. Gerald Prince", "D. Gérard Genette", "E. Tzvetan Todorov "],
+        answer: 3 - 1,
+        explanation: ""
+    },
+    {
+        question: "27. Identify the odd incorrect 1 regarding Genette ?",
+        options: ["A. Genette argues that a text is never read in a vacuum because a reader never encounters a 'text'", "B. He defines the Paratext as the sum of elements (titles – prefaces – covers – notes)", "C. Genette’s typology in 'Paratexts' suggests that translation is an entirely separate entity", "D. Genette in 'Paratexts' – it is impossible for a reader to engage with a text in total isolation ", "E. For Genette Paratexts do influence & shape how a text is received, so context does affect reception."],
+        answer: 5 - 1,
+        explanation: ""
+    },
+    {
+        question: "28. Genette distinguishes three primary diegetic levels—identify the odd one ?",
+        options: ["A. metadiegetic ", "B. intradiegetic ", "C. extradiegetic", "D. hypodiegetic", "E. sensodiegetic "],
+        answer: 4 - 1,
+        explanation: ""
+    },
+    {
+        question: "29. Assertion (A) – Will Wright’s primary goal in Sixguns & Society is to use the Western genrel to reveal the universal – unchanging architecture of the human mind. Reason (R) – Unlike Lévi-Strauss – Wright is concerned with how the structure of myths communicates a specific conceptual order' & social beliefs to the members of a society in Sixguns & Society.?",
+        options: ["A. – Both (A) & (R) are true – & – (R) is the correct explanation of (A).", "B. – Both (A) & (R) are true – but (R) is not the correct explanation of (A).", "C. – (A) is true – but (R) is false.", "D. – (A) is false – but (R) is true."],
+        answer: 1 - 1,
+        explanation: ""
+    },
+    {
+        question: "30. Which of the following information is incorrect regarding Will Wright’s 'Sixguns & Society': ?",
+        options: ["A. In 'Sixguns & Society' – Wright adapts Strauss’s structuralist methodology to the Western genre.", "B. He argues that Western has evolved through 3 stages—'classic'—'transition theme', 'C. For the 'classic' Western – Wright identifies a rigid sequence of sixteen narrative 'functions''", "D. Wright was influenced by Levi Strauss", "E. Wright like Lévi-Strauss sought to uncover the universal 'mental structure' of the human brain "],
+        answer: 5 - 1,
+        explanation: ""
     },
 ];
 
