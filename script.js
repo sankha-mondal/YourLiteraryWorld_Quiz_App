@@ -82,10 +82,58 @@ let questions = [
         explanation: ""
     },
     {
-        question: "Largest planet?",
-        options: ["Earth", "Mars", "Jupiter", "Saturn"],
+        question: "15. How does the theorist define a mytheme, the smallest unit of a myth? ",
+        options: ["A. A single word from a myth.", "B. A composite 'bundle' of relationships or actions within a myth.", "C. A character's individual feelings or thoughts in a myth.", "D. The moral or lesson of a myth."],
         answer: 2 - 1,
-        explanation: "Jupiter is the largest planet in our solar system."
+        explanation: ""
+    },
+    {
+        question: "16. According to Lévi Strauss, how does the dialectical method (thesis, antithesis, synthesis) apply to structural analysis?(Although thesis, antithesis, synthesis are all misguided translation) ",
+        options: ["A. It reveals how cultural opposites in myth and ritual are handled and resolved.", "B. It shows how a problem (thesis) leads to a solution (antithesis), resulting in a feeling of peace (synthesis).", "C. It allows anthropologists to compare how beliefs (myth) and practices (ritual) work in any society. ", "D. It is used to prove that every cultural problem has a single, definitive solution. "],
+        answer: 1 - 1,
+        explanation: "Delhi is the capital of India."
+    },
+    {
+        question: "17. Lévi Strauss distinguishes between two ways of reading a myth. Which of the following accurately describes how a structuralist would read a myth?     A. Reading 'vertically' to understand how myths work through binary oppositions.     B. Reading 'horizontally' to understand the narrative.     C. Reading the text forwards and backward to uncover hidden meanings.     D. Reading 'vertically' to find and compare mythemes (bundles of relationships) across different myths.",
+        options: ["A B D", "A B D", "B C D", "A C D"],
+        answer: 1 - 1,
+        explanation: "Delhi is the capital of India."
+    },
+    {
+        question: "18. How does Lévi Strauss' view on cultural structures relate to the process of globalization?      \nA. He believed that even before globalization, cultures were fundamentally alike because they are built from the same mental structures.     \nB. He believed that globalization is the only force that brings different cultures to have similar practices.     \nC. He believed that as globalization brings cultures together, it highlights these pre-existing structural commonalities.     \nD. He believed that globalization is a process by which cultures interact and blend, often leading to similarities and shared customs.",
+        options: ["A C D", "A B D", "B C A", "A B C"],
+        answer: 1 - 1,
+        explanation: ""
+    },
+    {
+        question: "Capital of India?",
+        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        answer: 1 - 1,
+        explanation: "Delhi is the capital of India."
+    },
+    {
+        question: "Capital of India?",
+        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        answer: 1 - 1,
+        explanation: "Delhi is the capital of India."
+    },
+    {
+        question: "Capital of India?",
+        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        answer: 1 - 1,
+        explanation: "Delhi is the capital of India."
+    },
+    {
+        question: "Capital of India?",
+        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        answer: 1 - 1,
+        explanation: "Delhi is the capital of India."
+    },
+    {
+        question: "Capital of India?",
+        options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        answer: 1 - 1,
+        explanation: "Delhi is the capital of India."
     },
     {
         question: "Capital of India?",
