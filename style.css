@@ -439,7 +439,7 @@ canvas {
 
     font-size: 28px;
     font-weight: bold;
-    color: rgba(173, 22, 22, 0.776);
+    color: rgba(15, 13, 13, 0.123);
 
     pointer-events: none;
     user-select: none;  
@@ -453,7 +453,7 @@ canvas {
 
     font-size: 28px;
     font-weight: bold;
-    color: rgba(35, 173, 22, 0.776);
+    color: rgba(15, 13, 13, 0.123);
 
     pointer-events: none;
     user-select: none;  
@@ -467,7 +467,35 @@ canvas {
 
     font-size: 28px;
     font-weight: bold;
-    color: rgba(22, 70, 173, 0.776);
+    color: rgba(15, 13, 13, 0.123);
+
+    pointer-events: none;
+    user-select: none;  
+}
+
+.watermark5 {
+    position: absolute;
+    top: 705%;
+    left: 30%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+
+    font-size: 28px;
+    font-weight: bold;
+    color: rgba(15, 13, 13, 0.123);
+
+    pointer-events: none;
+    user-select: none;  
+}
+
+.watermark6 {
+    position: absolute;
+    top: 880%;
+    left: 30%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+
+    font-size: 28px;
+    font-weight: bold;
+    color: rgba(15, 13, 13, 0.123);
 
     pointer-events: none;
     user-select: none;  
